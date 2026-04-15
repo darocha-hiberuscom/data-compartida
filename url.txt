@@ -3,3 +3,4 @@ https://pichincha.sharepoint.com/sites/TribudePlataformasTransversales/Documento
 https://pichincha-my.sharepoint.com/personal/crpillaj_pichincha_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcrpillaj%5Fpichincha%5Fcom%2FDocuments%2FDocumentos%2FInstructivos%20de%20instalaci%C3%B3n%20herramientas%20de%20ciberseguridad%20en%20el%20SDLC&ga=1
 
 
+https://dev.azure.com/BancoPichinchaEC/tpl-integrationbus-config/_git/sqb-cfg-067050-TX?path=%2F067050.xml
