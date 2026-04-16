@@ -22,3 +22,6 @@ curl --location 'https://tnd-msa-ad-bnc-customers-profile-enp.apps.ocpdev.uiotes
             <conttellerupd>70560</conttellerupd>
             <contlastupddt>2015-04-20</contlastupddt>
             <status1>00</status1>
+
+
+            https://dev.azure.com/BancoPichinchaEC/tpl-integrationbus-config/_git/sqb-cfg-067211-TX?path=/067211.xml
