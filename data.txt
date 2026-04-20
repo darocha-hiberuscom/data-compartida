@@ -30,3 +30,8 @@ curl --location 'https://tnd-msa-ad-bnc-customers-profile-enp.apps.ocpdev.uiotes
              <CustNo>3775863</CustNo> 
 
                <CustRef>4</CustRef> 
+
+               OPS$USRTCTLG
+ 
+uV2*bW/yX6T*Vb
+ 
