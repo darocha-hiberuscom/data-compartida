@@ -25,3 +25,8 @@ curl --location 'https://tnd-msa-ad-bnc-customers-profile-enp.apps.ocpdev.uiotes
 
 
             https://dev.azure.com/BancoPichinchaEC/tpl-integrationbus-config/_git/sqb-cfg-067211-TX?path=/067211.xml
+
+
+             <CustNo>3775863</CustNo> 
+
+               <CustRef>4</CustRef> 
