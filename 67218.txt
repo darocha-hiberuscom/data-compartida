@@ -1,0 +1,19 @@
+https://tnd-msa-ad-bnc-customers-reference-enp.apps.ocpdev.uiotest.bpichinchatest.test
+
+{
+  "transactionId": "067218",
+  "header": {
+    "bancsUser": {
+      "teller": "00070560",
+      "terminal": "1",
+      "institution": "003",
+      "branch": "1",
+      "workstation": "1",
+      "channel": "02"
+    }
+  },
+  "body": {
+  	"custNo": "3775863",
+  	"custRef": "4"	
+  }
+}
