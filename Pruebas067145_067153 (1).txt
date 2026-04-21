@@ -1,0 +1,96 @@
+postman request POST 'https://tnd-msa-ad-bnc-customers-profile-enp.apps.ocpdev.uiotest.bpichinchatest.test/bancs/trx/067153' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header 'Cookie: 7435db4d20daed63b0bd6cc2cc8bf1cf=da1dd3c0c52e4299651e62a793bb015b' \
+  --body '{
+  "transactionId": "067153",
+  "header": {
+    "bancsUser": {
+      "terminal": "1",
+      "institution": "0010",
+      "branch": "0044",
+      "workstation": "1",
+      "teller": "00070560",
+      "channel": "01",
+      "application": "00650"
+    }
+  },
+  "body": {
+    "cif": "0000000004613280",
+    "operacion": "01",
+    "tipocliente": "01",
+    "categorizacion": "01",
+    "tipoid": "01",
+    "numeroid": "1715892541",
+    "tipoidadi": "",
+    "numeroidadi": "",
+    "apellido1": "MARCILLO",
+    "apellido2": "FLECHER",
+    "nombre1": "SONIA",
+    "nombre2": "MARGARITA",
+    "nombre3": "",
+    "nombrecorto": "SONIA M",
+    "razonsocial": "",
+    "objetosocial": "",
+    "nombrecomer": "",
+    "fechaconstitu": "",
+    "fechainscregmer": "",
+    "nacionalidad": "EC",
+    "tipoidadi2": "",
+    "numeroidadi2": "",
+    "paisemipass": "",
+    "fechaexppass": "",
+    "fechainires": "",
+    "tipovisa": "",
+    "fechaexpvisa": "",
+    "numerocenso": "123456789",
+    "fechaexpcenso": "",
+    "clieobligcont": "N",
+    "paisconstitu": "EC",
+    "provconstitu": "",
+    "ciudaconstit": "",
+    "nombrecompleto": "MARCILLO FLECHER SONIA MARGARITA",
+    "usuarioBancs": "00070560",
+    "usuarioSiglo": "00070560"
+  }
+}'
+
+
+
+
+*****************************
+postman request POST 'https://tnd-msa-ad-bnc-customers-profile-enp.apps.ocpdev.uiotest.bpichinchatest.test/bancs/trx/067145' \
+  --header 'Content-Type: application/json' \
+  --header 'Cookie: 7435db4d20daed63b0bd6cc2cc8bf1cf=da1dd3c0c52e4299651e62a793bb015b' \
+  --body '{
+    "transactionId": "067145",
+    "header": {
+      "bancsUser": {
+        "terminal": 1,
+        "institution": "0010",
+        "branch": "1",
+        "workstation": "1",
+        "teller": "00070560",
+        "channel": "02",
+        "application": "00664"
+      }
+    },
+    "body": {
+      "numcif": "4613280",
+      "operacion": "2",
+      "spousename": "",
+      "MilCardNo1": "",
+      "ssn": "",
+      "employersssn": "",
+      "politicalparty": "",
+      "executivestate": "",
+      "learn": "",
+      "cname": "",
+      "Tradeunionassoc": "",
+      "tipoidconyuge": "",
+      "numidconyuge": "",
+      "propRelCom": "",
+      "accionistas": [],
+      "pasatiempos": []
+    }
+  }'
