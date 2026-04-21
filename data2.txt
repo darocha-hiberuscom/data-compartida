@@ -13,6 +13,9 @@ curl --location
 
 
 
+4333840
+
+653657
 
 
  curl --location 'https://tnd-msa-ad-bnc-customers-location-enp.apps.ocpdev.uiotest.bpichinchatest.test/bancs/trx/062130' \
