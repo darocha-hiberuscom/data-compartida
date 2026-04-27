@@ -4,3 +4,13 @@ jdbc:oracle:thin:@//siglo-tst-scan.uio.bpichincha.com:10521/DTST
  
  jdbc:oracle:thin:@//siglo-tst-scan.uio.bpichincha.com:10521/DTST
  
+
+ M012BAND_19c=
+	(DESCRIPTION=
+		(LOAD_BALANCE=YES)
+		(ADDRESS=(PROTOCOL=tcp)(HOST=TSECXDB004.uiotest.bpichinchatest.test)(PORT=10521))
+		(ADDRESS=(PROTOCOL=tcp)(HOST=TSECXDB003.uiotest.bpichinchatest.test)(PORT=10521))
+		(CONNECT_DATA=
+			(SERVICE_NAME=m012band_taf)
+		)
+	)
