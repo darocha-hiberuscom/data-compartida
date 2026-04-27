@@ -31,4 +31,4 @@ usu: m2d
 te conectas aquí 
 jdbc:oracle:thin:@omni-tst-scan.uio.bpichincha.com:10521/TPOMN
 usuario OPS$USRTINTD
-password 
+password LTg5dtRArN4*
