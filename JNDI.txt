@@ -22,7 +22,13 @@ bdd: CREDITO_TARJETAS
 port: 11411
 ip: 10.60.136.55
 usu: USRTCRTQ
-
+cl: qS9bBX8Rz*
 
 jdbc:oracle:thin:@siglo-tst-scan.uio.bpichincha.com:10521/DTST
 usu: m2d
+
+
+te conectas aquí 
+jdbc:oracle:thin:@omni-tst-scan.uio.bpichincha.com:10521/TPOMN
+usuario OPS$USRTINTD
+password 
