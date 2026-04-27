@@ -14,3 +14,15 @@ jdbc:oracle:thin:@//siglo-tst-scan.uio.bpichincha.com:10521/DTST
 			(SERVICE_NAME=m012band_taf)
 		)
 	)
+
+
+jdbc:oracle:thin:@omni-tst-scan.uio.bpichincha.com:10521/TPOMN
+
+bdd: CREDITO_TARJETAS
+port: 11411
+ip: 10.60.136.55
+usu: USRTCRTQ
+
+
+jdbc:oracle:thin:@siglo-tst-scan.uio.bpichincha.com:10521/DTST
+usu: m2d
