@@ -4,3 +4,8 @@ https://pichincha-my.sharepoint.com/personal/crpillaj_pichincha_com/_layouts/15/
 
 
 https://dev.azure.com/BancoPichinchaEC/tpl-integrationbus-config/_git/sqb-cfg-067050-TX?path=%2F067050.xml
+
+
+
+
+https://console-openshift-console.apps.ocptest.uiotest.bpichinchatest.test/
