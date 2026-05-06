@@ -25,6 +25,18 @@ usu: USRTCRTQ
 cl: qS9bBX8Rz*
 
 jdbc:oracle:thin:@siglo-tst-scan.uio.bpichincha.com:10521/DTST
+
+
+
+
+
+
+BDD CREDIFE
+IP 10.0.93.218
+
+PUERTO 11456
+USUARIO usrtosfi
+PASSWORD Ms5n(da2m*ys
 usu: m2d
 
 
