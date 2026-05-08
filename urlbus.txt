@@ -1,0 +1,53 @@
+http://10.70.128.156:5005/IntegrationBus/soap/ORQClientes0003
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:ConsultarProductosActivos01>
+            <headerIn>
+                <dispositivo>8cc22ba7a499d3d4</dispositivo>
+                <empresa>0010</empresa>
+                <canal>03</canal>
+                <medio>030006</medio>
+                <aplicacion>00663</aplicacion>
+                <agencia/>
+                <tipoTransaccion>301000301</tipoTransaccion>
+                <geolocalizacion>0,0</geolocalizacion>
+                <usuario>USINTERT</usuario>
+                <unicidad/>
+                <guid>7f0aaa1e85cf4c10bd90d02b7880e872</guid>
+                <fechaHora>202202121855240213</fechaHora>
+                <filler>8cc22ba7a499d3d4|Claro||Android|11|Xiaomi|Mi Note 10 Pro</filler>
+                <idioma>es-EC</idioma>
+                <sesion>862dfc43-1d98-4422-825d-3438426a8c47</sesion>
+                <ip>45.71.187.112</ip>
+                <idCliente>1718507906</idCliente>
+                <tipoIdCliente>0001</tipoIdCliente>
+                <bancs>
+                    <teller>00008002</teller>
+                    <terminal>1</terminal>
+                    <institucion>0010</institucion>
+                    <agencia>0012</agencia>
+                    <estacion>1</estacion>
+                    <aplicacion/>
+                    <canal/>
+                </bancs>
+            </headerIn>
+            <bodyIn>
+                <cif/>
+                <identificacion>1721053989</identificacion>
+                <tipoIdentificacion>0001</tipoIdentificacion>
+                <tipoProducto>T</tipoProducto>
+                <flujo>
+                    <estado>iniciar</estado>
+                    <campos>
+                        <campo>
+                            <clave/>
+                            <valor/>
+                        </campo>
+                    </campos>
+                </flujo>
+            </bodyIn>
+        </ser:ConsultarProductosActivos01>
+    </soapenv:Body>
+</soapenv:Envelope>
