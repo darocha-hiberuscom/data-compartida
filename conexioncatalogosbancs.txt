@@ -1,0 +1,2 @@
+jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(LOAD_BALANCE = YES)(FAILOVER = ON)(ADDRESS = (PROTOCOL = TCP)(HOST = TSECXDB004.uiotest.bpichinchatest.test)(PORT = 10521))(ADDRESS = (PROTOCOL = TCP)(HOST = TSECXDB003.uiotest.bpichinchatest.test)(PORT = 10521)))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = m012band_taf)))
+
