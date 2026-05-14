@@ -1,0 +1,88 @@
+
+
+
+Request 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:obtenerCatalogosSigloBancs01>
+         <!-- test-08: CCOD - Ciudad (BANCS) - codigo=01, filtro4=01 (provincia Azuay) -->
+         <headerIn>
+            <dispositivo>UZhDoaGXtkAK2QovFagnnSnQSGAFSKyTIIvaxc</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010004</medio>
+            <aplicacion>00650</aplicacion>
+            <agencia></agencia>
+            <tipoTransaccion>203006301</tipoTransaccion>
+            <geolocalizacion>0.681525, -0.1515</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>cKh0fuDJddHrOSzGX6vtJng7T7OmUU</unicidad>
+            <guid>UZhDoaGXtkAK2QovFagnnSnQSGAFSKyTIIvaxc</guid>
+            <fechaHora>202109081248555566</fechaHora>
+            <filler></filler>
+            <idioma>es-Ec</idioma>
+            <sesion></sesion>
+            <ip>10.60.128.57</ip>
+            <idCliente></idCliente>
+            <tipoIdCliente></tipoIdCliente>
+         </headerIn>
+         <bodyIn>
+            <tabla>CCOD</tabla>
+            <tablaAdicional></tablaAdicional>
+            <codigo>01</codigo>
+            <filtro1></filtro1>
+            <filtro2></filtro2>
+            <filtro3></filtro3>
+            <filtro4>01</filtro4>
+            <filtro5></filtro5>
+            <codigoTablaAdicional></codigoTablaAdicional>
+            <filtroTablaAdicional1></filtroTablaAdicional1>
+            <filtroTablaAdicional2></filtroTablaAdicional2>
+            <filtroTablaAdicional3></filtroTablaAdicional3>
+            <filtroTablaAdicional4></filtroTablaAdicional4>
+            <filtroTablaAdicional5></filtroTablaAdicional5>
+         </bodyIn>
+      </ser:obtenerCatalogosSigloBancs01>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Response 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <ns2:obtenerCatalogosSigloBancs01Response xmlns:ns2="http://bpichincha.com/servicios">
+         <headerOut>
+            <dispositivo>UZhDoaGXtkAK2QovFagnnSnQSGAFSKyTIIvaxc</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010004</medio>
+            <aplicacion>00650</aplicacion>
+            <agencia/>
+            <tipoTransaccion>203006301</tipoTransaccion>
+            <geolocalizacion>0.681525, -0.1515</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>cKh0fuDJddHrOSzGX6vtJng7T7OmUU</unicidad>
+            <guid>UZhDoaGXtkAK2QovFagnnSnQSGAFSKyTIIvaxc</guid>
+            <fechaHora>202109081248555566</fechaHora>
+            <filler/>
+            <idioma>es-Ec</idioma>
+            <sesion/>
+            <ip>10.60.128.57</ip>
+            <idCliente/>
+            <tipoIdCliente/>
+         </headerOut>
+         <bodyOut/>
+         <error>
+            <codigo>1</codigo>
+            <mensaje>VHReglas-El campo tabla no puede ser vacio.</mensaje>
+            <mensajeNegocio/>
+            <tipo>ERROR</tipo>
+            <recurso>WSTecnicos0063/ObtenerCatalogosSigloBancs01</recurso>
+            <componente>obtenerCatalogosSigloBancs01</componente>
+            <backend>00633</backend>
+         </error>
+      </ns2:obtenerCatalogosSigloBancs01Response>
+   </soapenv:Body>
+</soapenv:Envelope>

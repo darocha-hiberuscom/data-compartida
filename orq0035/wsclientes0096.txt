@@ -1,0 +1,122 @@
+curl --location "https://tnd-msa-sp-wsclientes0096-enp.apps.ocpdev.uiotest.bpichinchatest.test/IntegrationBus/soap/WSClientes0096" \
+  --header "Content-Type: text/xml; charset=utf-8" \
+  --header "SOAPAction: \"CrearProspecto21\"" \
+  --data "$body"
+
+request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:CrearProspecto21>
+         <headerIn>
+            <dispositivo></dispositivo>
+            <empresa></empresa>
+            <canal></canal>
+            <medio></medio>
+            <aplicacion></aplicacion>
+            <agencia>1</agencia>
+            <tipoTransaccion>062001</tipoTransaccion>
+            <geolocalizacion></geolocalizacion>
+            <usuario>00070560</usuario>
+            <unicidad></unicidad>
+            <guid></guid>
+            <fechaHora></fechaHora>
+            <filler></filler>
+            <idioma></idioma>
+            <sesion></sesion>
+            <ip></ip>
+            <idCliente>1711991818</idCliente>
+            <tipoIdCliente>01</tipoIdCliente>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>1</terminal>
+               <institucion>003</institucion>
+               <agencia>1</agencia>
+               <estacion>1</estacion>
+               <aplicacion></aplicacion>
+               <canal>02</canal>
+            </bancs>
+         </headerIn>
+         <bodyIn>
+            <prospecto>
+               <tipoCliente>01</tipoCliente>
+               <apellido1>FERNANDEZ</apellido1>
+               <apellido2></apellido2>
+               <nombre1>AUGUSTO</nombre1>
+               <nombre2></nombre2>
+               <nombre3></nombre3>
+               <nacionalidad>EC</nacionalidad>
+               <tfnProvisto>0</tfnProvisto>
+               <riesgoDomestico>ZZ</riesgoDomestico>
+               <cupoRiesgo>ZZ</cupoRiesgo>
+               <callePrincipal>Olson Walks</callePrincipal>
+               <calleSecundaria>Kozey Run</calleSecundaria>
+               <numeroIdentificacion>1711991818</numeroIdentificacion>
+               <tipoIdentificacion>01</tipoIdentificacion>
+               <retencionImpuestos></retencionImpuestos>
+               <paisDomicilio>EC</paisDomicilio>
+               <documentosVerificados></documentosVerificados>
+               <banderaFormulario></banderaFormulario>
+               <agenciaPropietaria>00033</agenciaPropietaria>
+               <paisEmisionPasaporte></paisEmisionPasaporte>
+               <segmento>0011</segmento>
+            </prospecto>
+         </bodyIn>
+      </ser:CrearProspecto21>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+RESPONSE
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://bpichincha.com/servicios">
+   <soapenv:Body>
+      <ns2:CrearProspecto21Response>
+         <headerOut>
+            <dispositivo/>
+            <empresa/>
+            <canal/>
+            <medio/>
+            <aplicacion/>
+            <agencia>1</agencia>
+            <tipoTransaccion>062001</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>00070560</usuario>
+            <unicidad/>
+            <guid/>
+            <fechaHora/>
+            <filler/>
+            <idioma/>
+            <sesion/>
+            <ip/>
+            <idCliente>1711991818</idCliente>
+            <tipoIdCliente>01</tipoIdCliente>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>1</terminal>
+               <institucion>003</institucion>
+               <agencia>1</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal>02</canal>
+            </bancs>
+            <documento>
+               <fechaContable/>
+               <numeroDocumento/>
+               <journals>
+                  <journal>
+                     <valor/>
+                  </journal>
+               </journals>
+            </documento>
+         </headerOut>
+         <error>
+            <codigo>1819</codigo>
+            <mensaje>TIPO DE CLIENTE INV\u00C1LIDO</mensaje>
+            <mensajeNegocio/>
+            <tipo>ERROR</tipo>
+            <recurso>WSClientes0096/CrearProspecto21</recurso>
+            <componente>CrearProspecto21</componente>
+            <backend>00045</backend>
+         </error>
+      </ns2:CrearProspecto21Response>
+   </soapenv:Body>
+</soapenv:Envelope>

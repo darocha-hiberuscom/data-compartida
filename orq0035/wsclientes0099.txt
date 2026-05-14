@@ -1,0 +1,150 @@
+curl --location "https://tnd-msa-sp-wsclientes0099-enp.apps.ocptest.uiotest.bpichinchatest.test/IntegrationBus/soap/WSClientes0099"   --header "Content-Type: text/xml; charset=utf-8"
+--header "SOAPAction: ""OperacionLocalizacion51""" `
+--data "$body"
+
+
+request
+
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ser="http://bpichincha.com/servicios">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ser:OperacionLocalizacion51>
+			<headerIn>
+				 <dispositivo>jmeter</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00270</aplicacion>
+            <agencia>1</agencia>
+            <tipoTransaccion>202000101</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad>sdfgsfdgfd67fdsgfdsgfdsgfdsgfdgfdsgfdsgfds</unicidad>
+            <guid>sdafdsafasdfadsfdvdsvdfsvfdsv</guid>
+            <fechaHora>20180517184120</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>b56a9824c9dd4dd79997e44490975yy4</sesion>
+            <ip>10.0.94.104</ip>
+            <idCliente>0602370777</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <!--Optional:-->
+            <bancs>
+                <teller>90233</teller>
+                <terminal>1</terminal>
+                <institucion>0010</institucion>
+                <agencia>1</agencia>
+                <estacion>1</estacion>
+                <aplicacion/>
+                <canal/>
+            	</bancs>
+			</headerIn>
+			<bodyIn>
+    				<tipoOperacion>2</tipoOperacion>
+    				<cif>653657</cif>
+    				<clienteNatural>TRUE</clienteNatural>
+			</bodyIn>
+		</ser:OperacionLocalizacion51>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+
+response 
+
+
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns3="http://bpichincha.com/servicios">
+   <ns2:Header/>
+   <ns2:Body>
+      <ns3:OperacionLocalizacion51Response>
+         <headerOut>
+            <dispositivo>jmeter</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00270</aplicacion>
+            <agencia>1</agencia>
+            <tipoTransaccion>202000101</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad>sdfgsfdgfd67fdsgfdsgfdsgfdsgfdgfdsgfdsgfds</unicidad>
+            <guid>sdafdsafasdfadsfdvdsvdfsvfdsv</guid>
+            <fechaHora>20180517184120</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>b56a9824c9dd4dd79997e44490975yy4</sesion>
+            <ip>10.0.94.104</ip>
+            <idCliente>0602370777</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <bancs>
+               <teller>90233</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>1</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+            <documento>
+               <fechaContable/>
+               <numeroDocumento/>
+               <journals/>
+            </documento>
+         </headerOut>
+         <bodyOut>
+            <direcciones>
+               <direccion>
+                  <tipoDireccion>01</tipoDireccion>
+                  <callePrincipal>PLAZA MADEIRA</callePrincipal>
+                  <calleSecundaria>MZ 5 15-</calleSecundaria>
+                  <provincia>09</provincia>
+                  <ciudad>0390</ciudad>
+                  <canton>0901</canton>
+                  <informacionAdicional>VIA A SAMBORONDON</informacionAdicional>
+                  <telefono>59304  2821787</telefono>
+                  <extension1>0</extension1>
+                  <pais>EC</pais>
+                  <identificador>A</identificador>
+               </direccion>
+               <direccion>
+                  <tipoDireccion>03</tipoDireccion>
+                  <callePrincipal>CHEMBERS 110</callePrincipal>
+                  <calleSecundaria>LA HABANA</calleSecundaria>
+                  <provincia>09</provincia>
+                  <ciudad>0390</ciudad>
+                  <informacionAdicional>ECONOFARMA</informacionAdicional>
+                  <telefono>593042440095</telefono>
+                  <extension1>0</extension1>
+                  <pais>EC</pais>
+                  <identificador>B</identificador>
+                  <fax>0  0 0</fax>
+               </direccion>
+            </direcciones>
+            <direccionesGeolocalizacion>
+               <geolocalizacion>
+                  <tipoDireccion>01</tipoDireccion>
+                  <instancia>A</instancia>
+                  <latitud>0.001424</latitud>
+                  <longitud>0.001424</longitud>
+               </geolocalizacion>
+               <geolocalizacion>
+                  <tipoDireccion>03</tipoDireccion>
+                  <instancia>B</instancia>
+                  <latitud>0.001424</latitud>
+                  <longitud>0.001424</longitud>
+               </geolocalizacion>
+            </direccionesGeolocalizacion>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tnd-msa-sp-wsclientes0099/OperacionLocalizacion51</recurso>
+            <componente>tnd-msa-sp-wsclientes0099</componente>
+            <backend>00638</backend>
+         </error>
+      </ns3:OperacionLocalizacion51Response>
+   </ns2:Body>
+</ns2:Envelope>

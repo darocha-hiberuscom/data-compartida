@@ -1,0 +1,109 @@
+curl --location "https://tnd-msa-sp-wsclientes0055-enp.apps.ocpdev.uiotest.bpichinchatest.test/IntegrationBus/soap/WSClientes0055"   --header "Content-Type: text/xml; charset=utf-8"
+--header "SOAPAction: ""OperacionActividadEconomicaCliente51""" `
+--data "$body"
+
+request
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   soapenv:Header/
+   soapenv:Body
+      ser:OperacionActividadEconomicaCliente51
+         <headerIn>
+            <dispositivo>[B@689270b1</dispositivo>
+            <empresa>0010</empresa>
+            <canal>03</canal>
+            <medio>030001</medio>
+            <aplicacion>00662</aplicacion>
+            <agencia>12</agencia>
+            <tipoTransaccion>201005551</tipoTransaccion>
+            <geolocalizacion>0000</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>ebda9410-69b6-41f1-b454-f6b0bb2adacd</unicidad>
+            <guid>6a080b15-49f4-4d13-9061-08650e16ef11</guid>
+            <fechaHora>202604151050030094</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>0de41021-c24c-45ec-a88c-8f2bf07023e8</sesion>
+            <ip>10.60.128.39</ip>
+            <idCliente/>
+            <tipoIdCliente/>
+            <bancs>
+               <teller>00070624</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>0012</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+         </headerIn>
+         <bodyIn>
+            <informacionActividadEconomica>
+               <cif>5781092</cif>
+               <operacion>2</operacion>
+               <operacionFacta>2</operacionFacta>
+               <clienteNatural>Y</clienteNatural>
+            </informacionActividadEconomica>
+         </bodyIn>
+      </ser:OperacionActividadEconomicaCliente51>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Response 
+
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns3="http://bpichincha.com/servicios">
+   ns2:Body
+      ns3:OperacionActividadEconomicaCliente51Response
+         <headerOut>
+            <dispositivo>[B@689270b1</dispositivo>
+            <empresa>0010</empresa>
+            <canal>03</canal>
+            <medio>030001</medio>
+            <aplicacion>00662</aplicacion>
+            <agencia>12</agencia>
+            <tipoTransaccion>201005551</tipoTransaccion>
+            <geolocalizacion>0000</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>ebda9410-69b6-41f1-b454-f6b0bb2adacd</unicidad>
+            <guid>6a080b15-49f4-4d13-9061-08650e16ef11</guid>
+            <fechaHora>202604151050030094</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>0de41021-c24c-45ec-a88c-8f2bf07023e8</sesion>
+            <ip>10.60.128.39</ip>
+            <idCliente/>
+            <tipoIdCliente/>
+            <bancs>
+               <teller>00070624</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>0012</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+            <documento>
+               <journals>
+                  <journal/>
+               </journals>
+            </documento>
+         </headerOut>
+         <bodyOut>
+            <actividadEconomica>
+               <situacionLaboral/>
+               <situacionLaboralNoTrabaja/>
+            </actividadEconomica>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tnd-msa-sp-wsclientes0055/OperacionActividadEconomicaCliente51</recurso>
+            <componente>tnd-msa-sp-wsclientes0055</componente>
+            <backend>00638</backend>
+         </error>
+      </ns3:OperacionActividadEconomicaCliente51Response>
+   </ns2:Body>
+</ns2:Envelope>
