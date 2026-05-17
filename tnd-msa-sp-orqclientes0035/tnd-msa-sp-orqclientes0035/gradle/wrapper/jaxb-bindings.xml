@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               version="3.0">
+    
+    <!-- Configuración global: eliminar JAXBElement para todos los esquemas -->
+    <jaxb:globalBindings generateElementProperty="false">
+        <!-- Habilitar convenciones de nombres Java (normaliza capitalización) -->
+        <xjc:javaType name="java.util.Calendar" xmlType="xs:dateTime"
+                      adapter="jakarta.xml.bind.annotation.adapters.XmlAdapter"/>
+        
+        <!-- Generar clases serializables -->
+        <xjc:serializable uid="1"/>
+        
+        <!-- No generar métodos isSetXxx() innecesarios -->
+        <xjc:simple/>
+    </jaxb:globalBindings>
+    
+</jaxb:bindings>

@@ -1,0 +1,8 @@
+spring:
+  main:
+    lazy-initialization: on
+  application:
+    name: tnd-msa-sp-orqclientes0035
+  header:
+    channel: digital
+    medium: web
