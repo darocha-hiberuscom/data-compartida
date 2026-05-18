@@ -1,0 +1,3 @@
+https://tnd-msa-ad-bnc-customers-enp.apps.ocpdev.uiotest.bpichinchatest.test/bancs/trx/067186 
+
+"%JAVA_HOME%\bin\keytool" -importcert -alias bancs-cert -file "C:\ruta\al\certificado\server.crt" -keystore "%JAVA_HOME%\lib\security\cacerts" -storepass changeit -noprompt 

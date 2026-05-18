@@ -1,0 +1,191 @@
+curl --location "https://tnd-msa-sp-wsclientes0067-enp.apps.ocptest.uiotest.bpichinchatest.test/IntegrationBus/soap/WSClientes0067" \
+
+Request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarCuentasClientes01>
+         <headerIn>
+            <dispositivo>DEVICE123</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00270</aplicacion>
+            <agencia>00012</agencia>
+            <tipoTransaccion>304100111</tipoTransaccion>
+            <geolocalizacion>0,0</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+            <guid>550e8400e29b41d4a716446655440000</guid>
+            <fechaHora>202603311551000000</fechaHora>
+            <filler>00000000000000000000000000000000000000000000000000</filler>
+            <idioma>es</idioma>
+            <sesion>ASDASD77R01YH</sesion>
+            <ip>127.0.0.1</ip>
+            <idCliente>1711089364</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>000001</terminal>
+               <institucion>000001</institucion>
+               <agencia>00012</agencia>
+               <estacion>001</estacion>
+               <aplicacion>BEP</aplicacion>
+               <canal>02</canal>
+            </bancs>
+         </headerIn>
+         <bodyIn>
+            <identificacion>1802123370</identificacion>
+            <tipoIdentificacion>0001</tipoIdentificacion>
+            <tipoCuenta>ALL</tipoCuenta>
+         </bodyIn>
+      </ser:ConsultarCuentasClientes01>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Response 
+
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns3="http://bpichincha.com/servicios">
+   <ns2:Body>
+      <ns3:ConsultarCuentasClientes01Response>
+         <headerOut>
+            <dispositivo>DEVICE123</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00270</aplicacion>
+            <agencia>00012</agencia>
+            <tipoTransaccion>304100111</tipoTransaccion>
+            <geolocalizacion>0,0</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+            <guid>550e8400e29b41d4a716446655440000</guid>
+            <fechaHora>202603311551000000</fechaHora>
+            <filler>00000000000000000000000000000000000000000000000000</filler>
+            <idioma>es</idioma>
+            <sesion>ASDASD77R01YH</sesion>
+            <ip>127.0.0.1</ip>
+            <idCliente>1711089364</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>000001</terminal>
+               <institucion>000001</institucion>
+               <agencia>00012</agencia>
+               <estacion>001</estacion>
+               <aplicacion>BEP</aplicacion>
+               <canal>02</canal>
+            </bancs>
+            <documento>
+               <fechaContable/>
+               <numeroDocumento/>
+               <journals/>
+            </documento>
+         </headerOut>
+         <bodyOut>
+            <cuentas>
+               <cuenta>
+                  <numeroCuenta>2100012806</numeroCuenta>
+                  <tipo>CTA.CTE PERSONAL</tipo>
+                  <moneda>USD</moneda>
+                  <fechaApertura>24092013</fechaApertura>
+                  <nombreCliente>GREFA  ANDI ALEJANDRO FIDEL</nombreCliente>
+                  <direccionCliente>OE3C YAUPI N31-90 PB  MARIA DE JESUS</direccionCliente>
+                  <relacion>PROPIETARIO</relacion>
+                  <saldoDisponible>1996532.93</saldoDisponible>
+                  <saldoContable>1997852.93</saldoContable>
+                  <producto>2101</producto>
+                  <subProducto>0001</subProducto>
+                  <tipoProducto>21010001</tipoProducto>
+                  <tipoCuenta>CC</tipoCuenta>
+                  <codigoEstado>00</codigoEstado>
+                  <descCuenta>Q</descCuenta>
+                  <estado>ACTIVO</estado>
+               </cuenta>
+               <cuenta>
+                  <numeroCuenta>2100012831</numeroCuenta>
+                  <tipo>CTA.CTE PERSONAL</tipo>
+                  <moneda>USD</moneda>
+                  <fechaApertura>07092012</fechaApertura>
+                  <nombreCliente>QUINTERO  ARROYO WALTER JAVIER</nombreCliente>
+                  <direccionCliente>VIA QUEVEDO STO DOMINGO CLL 27  DE SEPTI  SIN TRANSVERSAL</direccionCliente>
+                  <relacion>COPROPIETARIO</relacion>
+                  <saldoDisponible>1998845.32</saldoDisponible>
+                  <saldoContable>1998845.32</saldoContable>
+                  <producto>2101</producto>
+                  <subProducto>0001</subProducto>
+                  <tipoProducto>21010001</tipoProducto>
+                  <tipoCuenta>CC</tipoCuenta>
+                  <codigoEstado>00</codigoEstado>
+                  <descCuenta>Q</descCuenta>
+                  <estado>ACTIVO</estado>
+               </cuenta>
+               <cuenta>
+                  <numeroCuenta>2100074802</numeroCuenta>
+                  <tipo>CTA.CTE PERSONAL</tipo>
+                  <moneda>USD</moneda>
+                  <fechaApertura>23012015</fechaApertura>
+                  <nombreCliente>GREFA  ANDI ALEJANDRO FIDEL</nombreCliente>
+                  <direccionCliente>OE3C YAUPI N31-90 PB  MARIA DE JESUS</direccionCliente>
+                  <relacion>PROPIETARIO</relacion>
+                  <saldoDisponible>1999925.60</saldoDisponible>
+                  <saldoContable>1999925.60</saldoContable>
+                  <producto>2101</producto>
+                  <subProducto>0001</subProducto>
+                  <tipoProducto>21010001</tipoProducto>
+                  <tipoCuenta>CC</tipoCuenta>
+                  <codigoEstado>00</codigoEstado>
+                  <descCuenta>Q</descCuenta>
+                  <estado>ACTIVO</estado>
+               </cuenta>
+               <cuenta>
+                  <numeroCuenta>2100078459</numeroCuenta>
+                  <tipo>CTA.CTE PERSONAL</tipo>
+                  <moneda>USD</moneda>
+                  <fechaApertura>25112015</fechaApertura>
+                  <nombreCliente>GREFA  ANDI ALEJANDRO FIDEL</nombreCliente>
+                  <direccionCliente>OE3C YAUPI N31-90 PB  MARIA DE JESUS</direccionCliente>
+                  <relacion>PROPIETARIO</relacion>
+                  <saldoDisponible>1999980.10</saldoDisponible>
+                  <saldoContable>1999980.10</saldoContable>
+                  <producto>2101</producto>
+                  <subProducto>0001</subProducto>
+                  <tipoProducto>21010001</tipoProducto>
+                  <tipoCuenta>CC</tipoCuenta>
+                  <codigoEstado>00</codigoEstado>
+                  <descCuenta>Q</descCuenta>
+                  <estado>ACTIVO</estado>
+               </cuenta>
+               <cuenta>
+                  <numeroCuenta>2100078462</numeroCuenta>
+                  <tipo>CTA.CTE PERSONAL</tipo>
+                  <moneda>USD</moneda>
+                  <fechaApertura>25112015</fechaApertura>
+                  <nombreCliente>GREFA  ANDI ALEJANDRO FIDEL</nombreCliente>
+                  <direccionCliente>OE3C YAUPI N31-90 PB  MARIA DE JESUS</direccionCliente>
+                  <relacion>PROPIETARIO</relacion>
+                  <saldoDisponible>1090.79</saldoDisponible>
+                  <saldoContable>1090.79</saldoContable>
+                  <producto>2101</producto>
+                  <subProducto>0001</subProducto>
+                  <tipoProducto>21010001</tipoProducto>
+                  <tipoCuenta>CC</tipoCuenta>
+                  <codigoEstado>00</codigoEstado>
+                  <descCuenta>Q</descCuenta>
+                  <estado>ACTIVO</estado>
+               </cuenta>
+            </cuentas>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tnd-msa-sp-wsclientes0067/ConsultarCuentasClientes01</recurso>
+            <componente>tnd-msa-sp-wsclientes0067</componente>
+            <backend>00638</backend>
+         </error>
+      </ns3:ConsultarCuentasClientes01Response>
+   </ns2:Body>
+</ns2:Envelope>
