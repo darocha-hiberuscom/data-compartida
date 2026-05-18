@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="WSClientes0108" targetNamespace="http://bpichincha.com/servicios" xmlns:bp="http://bpichincha.com/servicios" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="WSClientes0108_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="WSClientes0108SOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    
+          <xsd:schema targetNamespace="http://bpichincha.com/servicios" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="WSClientes0108_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="crearCliente24Request">
+    <wsdl:part element="bp:crearCliente24" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="crearCliente24Response">
+    <wsdl:part element="bp:crearCliente24Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="WSClientes0108">
+    <wsdl:operation name="crearCliente24">
+      <wsdl:input message="bp:crearCliente24Request"/>
+      <wsdl:output message="bp:crearCliente24Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSClientes0108SOAP" type="bp:WSClientes0108">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="crearCliente24">
+
+  		<soap:operation
+  			soapAction="http://bpichincha.com/servicios/crearCliente24" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSClientes0108">
+    <wsdl:port binding="bp:WSClientes0108SOAP" name="WSClientes0108SOAP">
+      <soap:address location="http://localhost:7800/IntegrationBus/soap/WSClientes0108"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

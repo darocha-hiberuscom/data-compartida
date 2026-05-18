@@ -1,0 +1,99 @@
+#Se recomienda confirar los secretos con external secrets helm v5
+
+variables:
+  own:
+    config:
+      - name: "JAVA_OPTIONS"
+        value: "-Xmx300m -XX:+UseStringDeduplication -XX:+UseG1GC"
+      # LOGGING
+      - name: "TPL_LOG_INFO"
+        value: "INFO"
+      - name: "TPL_LOG_WARN"
+        value: "WARN"
+    secret: {}
+
+    routes:
+      - security: "https"
+        host: "apps.ocptest.uiotest.bpichinchatest.test"
+      - security: "http"
+        host: "apps.ocptest.uiotest.bpichinchatest.test"
+
+global:
+  environment: "test"
+  replicaCount: "1"
+  revisionHistoryLimit: "5"
+  minReadySeconds: "0"
+  version: "v1"
+  labels:
+    celula: "capa-comun"
+    tribu: ""
+    descripcion-funcional: ""
+    funcion-vital: "medianamente-critica"
+    grupo-resolutor: "TEC_BP_N3_TRIBU_PLATAF_BUS"
+    ambiente: "test"  
+
+container:
+  project: "test"
+  registry: "gcr.io"
+  tag: "2019.11.25-16.30.32"
+  pullPolicy: "IfNotPresent"
+  imagePullSecrets:
+    - name: secret-acr
+  livenessProbe:
+    exec:
+      command:
+        - /bin/sh
+        - -c
+        - |
+          if [ "$(curl -s http://localhost:8080/actuator/health | cut -d "{" -f 2 | cut -d "}" -f 1 | cut -d "," -f 1 )" != '"status":"UP"' ];then exit 1; fi
+    initialDelaySeconds: 60 # En base al tiempo del inicio de spring boot
+    periodSeconds: 15
+    failureThreshold: 12
+  readinessProbe:
+    exec:
+      command:
+        - /bin/sh
+        - -c
+        - |
+          if [ "$(curl -s http://localhost:8080/actuator/health | cut -d "{" -f 2 | cut -d "}" -f 1 | cut -d "," -f 1 )" != '"status":"UP"' ];then exit 1; fi
+    initialDelaySeconds: 60 
+    periodSeconds: 15
+    failureThreshold: 12
+  resources:
+    requests:
+      cpu: 100m
+      memory: 350Mi
+    limits:
+      cpu: 200m
+      memory: 500Mi
+  port:
+    - name: msa-port
+      servicePort: 80
+      containerPort: 8080
+      protocol: TCP
+  volumeMounts:
+    - name: init-sh
+      mountPath: /opt/build/init.sh
+      subPath: init.sh
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: AverageValue
+          averageValue: 200m
+
+pdb:
+  minAvailable: 1
+
+volumes:
+  - name: init-sh
+    configMap:
+      name: configmap-tnd-msa-sp-wsclientes0108
+      items:
+        - key: init.sh
+          path: init.sh

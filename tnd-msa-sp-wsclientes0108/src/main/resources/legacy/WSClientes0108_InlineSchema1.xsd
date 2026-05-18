@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bpichincha.com/servicios" xmlns:bp="http://bpichincha.com/servicios" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    	<xsd:include schemaLocation="../GenericSOAP.xsd"/>
+    	<xsd:element ibmSchExtn:docRoot="true" name="crearCliente24">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element maxOccurs="1" minOccurs="1" name="headerIn" type="bp:GenericHeaderIn"/>
+    				<xsd:element maxOccurs="1" minOccurs="1" name="bodyIn" type="bp:datosBasicosCliente">
+    				</xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element ibmSchExtn:docRoot="true" name="crearCliente24Response">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element maxOccurs="1" minOccurs="1" name="headerOut" type="bp:GenericHeaderOut"/>
+    				<xsd:element maxOccurs="1" minOccurs="1" name="bodyOut" type="xsd:string">
+    				</xsd:element>
+    				<xsd:element maxOccurs="1" minOccurs="1" name="error" type="bp:GenericError"/>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    
+    	<xsd:complexType name="datosBasicosCliente">
+    		<xsd:sequence>
+
+            <xsd:element name="cif" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+            <xsd:element name="datosBasicos" type="bp:datosBasico"
+    				maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="datosAdicionales"
+    				type="bp:DatosAdicionales" maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+
+
+
+
+
+    			<xsd:element name="fatca" type="bp:fatca" maxOccurs="1"
+    				minOccurs="0">
+    			</xsd:element>
+
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="datosBasico">
+    		<xsd:sequence>
+
+            <xsd:element name="apellidoPrincipal" type="xsd:string" maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+            <xsd:element name="apellidoSecundario" type="xsd:string"
+    				maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="nombrePrincipal" type="xsd:string"
+    				maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="nombreSecundario" type="xsd:string"
+    				maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+
+
+
+
+
+
+
+
+    			<xsd:element name="estadoCliente" type="xsd:string"
+    				maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="lugaNacimiento">
+    		<xsd:sequence>
+    			<xsd:element name="provincia" type="xsd:string"></xsd:element>
+    			<xsd:element name="ciudad" type="xsd:string"></xsd:element>
+    			<xsd:element name="parroquia" type="xsd:string"></xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="datosConyugue">
+    		<xsd:sequence>
+
+
+    			<xsd:element name="nombreApellidoConyuge" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+
+    			<xsd:element name="identificacion" type="xsd:string" maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="tipoCliente" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+        </xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="detalleSituacionLaboral">
+    		<xsd:sequence>
+    			<xsd:element name="codigoSituacionLaboral"
+    				type="xsd:string" maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="codigoSectorEconomico"
+    				type="xsd:string" maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="codigoActividadEconomica"
+    				type="xsd:string" maxOccurs="1" minOccurs="0">
+    			</xsd:element>
+    			<xsd:element name="operacion" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="actividadEconomicaPrincipal">
+    		<xsd:sequence>
+    			<xsd:element name="situacionLaboral" type="bp:detalleSituacionLaboral" maxOccurs="1" minOccurs="0"></xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+    	
+    <xsd:complexType name="lugarNacimiento"></xsd:complexType>
+
+
+    <xsd:complexType name="riesgoCliente">
+    	<xsd:sequence>
+    		<xsd:element name="codigoSegmento" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+    		<xsd:element name="codigoSubSegmento" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+    		<xsd:element name="riesgoDomestico" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+    		<xsd:element name="cruceCupoRiesgo" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="DatosAdicionales">
+    	<xsd:sequence>
+    		<xsd:element name="fechaNacimiento" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="lugarNacimiento" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="genero" type="xsd:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="estadoCivil" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+
+    		<xsd:element name="lugarTrabajo" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="edad" type="xsd:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xsd:element>
+
+    		<xsd:element name="condicionCedulado" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="motivoCreacionCliente" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+
+    		<xsd:element name="nombreApellidoConyuge" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="clienteLlevaContabilidad" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Ingresos">
+    	<xsd:sequence>
+    		<xsd:element name="ingresoVentas" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="fatca">
+    	<xsd:sequence>
+
+            <xsd:element name="otraNacionalidad" type="xsd:string" maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+            <xsd:element name="codigoTIN" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="cuentaConRepresentanteLegalEEUU"
+    			type="xsd:string" maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="obligacionesTributariasExterior"
+    			type="xsd:string" maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="paisObligacionesTributariasExterior"
+    			type="xsd:string" maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="nacionalidad2" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="nacionalidad3" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="direccionCorrespondencia"
+    			type="xsd:string" maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

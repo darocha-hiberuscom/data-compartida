@@ -1,0 +1,67 @@
+spring:
+  main:
+    lazy-initialization: on
+  application:
+    name: tnd-msa-sp-wsclientes0108
+  header:
+    channel: digital
+    medium: web
+  http:
+    reactiveclient:
+      connector: REACTOR
+      connect-timeout: 500ms
+      read-timeout: 800ms
+
+trace-logger:
+  enabled: true
+  custom-level:
+    enabled: true
+    infoEnabled: true
+    debugEnabled: true
+    warnEnabled: true
+    errorEnabled: true
+
+bancs:
+  webclient:
+    max-connections: -1
+    max-idle-time: 10s
+    pending-acquire-max-count: -1
+    pending-acquire-timeout: 2s
+    max-in-memory-size: 5MB
+    base-url: http://localhost:7800
+  iib-support:
+    enabled: true
+
+web-filter:
+  trace-id-header-name: x-guid
+
+resilience4j:
+  circuitbreaker:
+    enabled: false
+
+optimus:
+  web:
+    filter:
+      excluded-path-patterns:
+        defaults: "/actuator"
+    headers:
+      enabled: true
+      defaults:
+        x-app:
+          forward: true
+        x-guid:
+          forward: true
+        x-channel:
+          forward: true
+        x-medium:
+          forward: true
+        x-session:
+          forward: true
+        x-device:
+          forward: true
+        x-device-ip:
+          forward: true
+        x-agency:
+          forward: true
+        x-geolocation:
+          forward: true

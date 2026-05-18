@@ -1,0 +1,115 @@
+package com.pichincha.sp.infrastructure.output.adapter;
+
+import com.pichincha.bnc.apiclient.adapter.BancsClient;
+import com.pichincha.bnc.apiclient.dto.request.BancsRequest;
+import com.pichincha.bnc.apiclient.dto.response.BancsResponse;
+import com.pichincha.bnc.apiclient.exception.BancsIntegrationException;
+import com.pichincha.common.trace.logger.annotation.BpLogger;
+import com.pichincha.common.trace.logger.logger.custom.level.CustomLogLevel;
+import com.pichincha.common.trace.logger.logger.custom.level.CustomLogLevelHandler;
+import com.pichincha.sp.application.exception.BusinessException;
+import com.pichincha.sp.application.port.output.CustomerLocationPortOutput;
+import com.pichincha.sp.domain.constants.BancsAdapterConstants;
+import com.pichincha.sp.domain.constants.IntegrationConstants;
+import com.pichincha.sp.domain.dto.LocationMaintenanceRequestDto;
+import com.pichincha.sp.domain.dto.LocationMaintenanceResponseDto;
+import com.pichincha.sp.infrastructure.output.adapter.mapper.Tx061404Mapper;
+import com.pichincha.sp.infrastructure.output.adapter.request.Tx061404Request;
+import com.pichincha.sp.infrastructure.output.adapter.response.Tx061404Response;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.reactive.function.client.WebClientRequestException;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
+import reactor.core.publisher.Mono;
+
+import java.util.concurrent.TimeoutException;
+
+@Repository
+@RequiredArgsConstructor
+public class Tx061404Adapter implements CustomerLocationPortOutput {
+
+    private final BancsClient bancsClient;
+    private final CustomLogLevelHandler customLogLevelHandler;
+    private final Tx061404Mapper tx061404Mapper;
+    private final BancsAdapterErrorHandler bancsAdapterErrorHandler;
+    @Value("${wsclientes0099.bancs.business-error-code-bancs:00045}")
+    private String bancsErrorCode = "00045";
+
+    @Override
+    @BpLogger
+    public Mono<LocationMaintenanceResponseDto> executeLocationMaintenance(LocationMaintenanceRequestDto request) {
+        Tx061404Request bodyDto = tx061404Mapper.toRequestDto(request);
+        BancsRequest<Tx061404Request> bancsRequest = BancsRequest.<Tx061404Request>builder()
+                .transactionId(IntegrationConstants.TX_061404)
+                .body(bodyDto)
+                .build();
+
+        return bancsClient.call(bancsRequest, Tx061404Response.class)
+                .doOnNext(response -> customLogLevelHandler.log(
+                        CustomLogLevel.DEBUG,
+                        Thread.currentThread().getStackTrace(),
+                        String.format(BancsAdapterConstants.LOG_RESPONSE_RECEIVED, IntegrationConstants.TX_061404),
+                        response))
+                .flatMap(this::extractBody)
+                .doOnNext(body -> customLogLevelHandler.log(
+                        CustomLogLevel.DEBUG,
+                        Thread.currentThread().getStackTrace(),
+                        String.format(BancsAdapterConstants.LOG_RESPONSE_VALIDATED, IntegrationConstants.TX_061404),
+                        body))
+                .map(tx061404Mapper::toDomainResponse)
+                .doOnNext(mapped -> customLogLevelHandler.log(
+                        CustomLogLevel.DEBUG,
+                        Thread.currentThread().getStackTrace(),
+                        String.format(BancsAdapterConstants.LOG_RESPONSE_MAPPED, IntegrationConstants.TX_061404),
+                        mapped))
+                .onErrorResume(BancsIntegrationException.class,
+                        bancsAdapterErrorHandler::handleBancsIntegrationError)
+                .onErrorResume(WebClientResponseException.class,
+                        bancsAdapterErrorHandler::handleHttpError)
+                .onErrorResume(WebClientRequestException.class,
+                        bancsAdapterErrorHandler::handleConnectionError)
+                .onErrorResume(TimeoutException.class,
+                        bancsAdapterErrorHandler::handleTimeoutError)
+                .doOnError(error -> customLogLevelHandler.log(
+                        CustomLogLevel.ERROR,
+                        Thread.currentThread().getStackTrace(),
+                        String.format(
+                                BancsAdapterConstants.LOG_UNEXPECTED_ERROR,
+                                IntegrationConstants.TX_061404,
+                                error.getMessage()),
+                        error.getMessage()))
+                .doFinally(signalType -> customLogLevelHandler.log(
+                        CustomLogLevel.INFO,
+                        Thread.currentThread().getStackTrace(),
+                        String.format(
+                                BancsAdapterConstants.LOG_FLOW_FINISHED,
+                                IntegrationConstants.TX_061404,
+                                signalType),
+                        signalType));
+    }
+
+    private Mono<Tx061404Response> extractBody(BancsResponse<Tx061404Response> response) {
+
+        if (response == null || (response.body() == null && response.error() == null)) {
+            return bancsAdapterErrorHandler.handleEmptyBodyError();
+        }
+        if (Boolean.FALSE.equals(response.success())) {
+            String errorCode = response.error() != null && response.error().code() != null
+                    ? response.error().code()
+                    : BancsAdapterConstants.ERROR_CODE;
+            String errorMessage = response.error() != null && response.error().message() != null
+                    ? response.error().message()
+                    : String.format(BancsAdapterConstants.ERROR_UNSUCCESSFUL_RESPONSE, IntegrationConstants.TX_061404);
+            return Mono.error(new BusinessException(
+                    errorCode,
+                    errorMessage,
+                    null,
+                    null,
+                    bancsErrorCode));
+        }
+        assert response.body() != null;
+        return Mono.just(response.body());
+    }
+
+}
