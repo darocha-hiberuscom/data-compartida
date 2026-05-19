@@ -1,4 +1,4 @@
-#Se recomienda confirar los secretos con external secrets helm v5
+# templates Helm diferentes para aks y ocp4
 
 variables:
   own:
@@ -14,30 +14,19 @@ variables:
 
     routes:
       - security: "https"
-        host: "apps.ocp.bpichincha.com"
-      - security: "https"
-        host: "apps.ocpdcp.bpichincha.com"
-      - security: "https"
-        host: "apps.ocpdca.bpichincha.com"
+        host: "apps.ocpdev.uiotest.bpichinchatest.test"
       - security: "http"
-        host: "apps.ocp.bpichincha.com"
+        host: "apps.ocpdev.uiotest.bpichinchatest.test"
 
 global:
-  environment: "prod"
+  environment: "dev"
   replicaCount: "1"
   revisionHistoryLimit: "5"
   minReadySeconds: "0"
   version: "v1"
-  labels:
-    celula: "capa-comun"
-    tribu: ""
-    descripcion-funcional: ""
-    funcion-vital: "medianamente-critica"
-    grupo-resolutor: "TEC_BP_N3_TRIBU_PLATAF_BUS"
-    ambiente: "produccion"  
 
 container:
-  project: "production"
+  project: "dev"
   registry: "gcr.io"
   tag: "2019.11.25-16.30.32"
   pullPolicy: "IfNotPresent"
@@ -50,7 +39,7 @@ container:
         - -c
         - |
           if [ "$(curl -s http://localhost:8080/actuator/health | cut -d "{" -f 2 | cut -d "}" -f 1 | cut -d "," -f 1 )" != '"status":"UP"' ];then exit 1; fi
-    initialDelaySeconds: 60
+    initialDelaySeconds: 60 # En base al tiempo del inicio de spring boot
     periodSeconds: 15
     failureThreshold: 12
   readinessProbe:
@@ -64,10 +53,10 @@ container:
     periodSeconds: 15
     failureThreshold: 12
   resources:
-    requests:
+    requests: # Reserva de memoria en base a lo que esta en los detalles del pod al iniciar (sin carga)
       cpu: 100m
       memory: 350Mi
-    limits:
+    limits: # Se ajusta con las pruebas de carga
       cpu: 200m
       memory: 500Mi
   port:
@@ -80,9 +69,9 @@ container:
       mountPath: /opt/build/init.sh
       subPath: init.sh
 
-hpa:
-  minReplicas: 2
-  maxReplicas: 4
+hpa: # cuando escalan los pods / se ajusta con las pruebas de carga
+  minReplicas: 1
+  maxReplicas: 1
   metrics:
     - type: Resource
       resource:
@@ -90,9 +79,6 @@ hpa:
         target:
           type: AverageValue
           averageValue: 200m
-pdb:
-  minAvailable: 1
-  
 volumes:
   - name: init-sh
     configMap:

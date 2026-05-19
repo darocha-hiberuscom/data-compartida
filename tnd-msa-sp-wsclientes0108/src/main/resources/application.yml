@@ -1,67 +1,102 @@
 spring:
-  main:
-    lazy-initialization: on
-  application:
-    name: tnd-msa-sp-wsclientes0108
-  header:
-    channel: digital
-    medium: web
   http:
     reactiveclient:
-      connector: REACTOR
-      connect-timeout: 500ms
-      read-timeout: 800ms
-
-trace-logger:
-  enabled: true
-  custom-level:
-    enabled: true
-    infoEnabled: true
-    debugEnabled: true
-    warnEnabled: true
-    errorEnabled: true
+      connector: ${SPRING_REACTIVE_CLIENT_CONNECTOR}
+      connect-timeout: ${SPRING_REACTIVE_CLIENT_CONNECT_TIMEOUT}
+      read-timeout: ${SPRING_REACTIVE_CLIENT_READ_TIMEOUT}
+  autoconfigure:
+    exclude: ${SPRING_AUTOCONFIGURE_EXCLUDE}
+  main:
+    lazy-initialization: ${SPRING_MAIN_LAZY_INITIALIZATION}
+  application:
+    name: ${SPRING_APPLICATION_NAME}
+  header:
+    channel: ${SPRING_HEADER_CHANNEL}
+    medium: ${SPRING_HEADER_MEDIUM}
 
 bancs:
   webclient:
-    max-connections: -1
-    max-idle-time: 10s
-    pending-acquire-max-count: -1
-    pending-acquire-timeout: 2s
-    max-in-memory-size: 5MB
-    base-url: http://localhost:7800
+    max-connections: ${BANCS_WEBCLIENT_MAX_CONNECTIONS}
+    max-idle-time: ${BANCS_WEBCLIENT_MAX_IDLE_TIME}
+    pending-acquire-max-count: ${BANCS_WEBCLIENT_PENDING_ACQUIRE_MAX_COUNT}
+    pending-acquire-timeout: ${BANCS_WEBCLIENT_PENDING_ACQUIRE_TIMEOUT}
+    max-in-memory-size: ${BANCS_WEBCLIENT_MAX_IN_MEMORY_SIZE}
+    base-url: ${BANCS_BASE_URL}
   iib-support:
-    enabled: true
+    enabled: ${BANCS_IIB_SUPPORT_ENABLED}
+
+wsclientes0108:
+  soap:
+    service-path: ${WSCLIENTES0108_SOAP_SERVICE_PATH}
+    backend: ${WSCLIENTES0108_SOAP_BACKEND}
+    header-invalid-code: ${WSCLIENTES0108_SOAP_HEADER_INVALID_CODE}
+    header-invalid-message: ${WSCLIENTES0108_SOAP_HEADER_INVALID_MESSAGE}
+  bancs:
+    http-error-code: ${WSCLIENTES0108_BANCS_HTTP_ERROR_CODE}
+    http-error-message: ${WSCLIENTES0108_BANCS_HTTP_ERROR_MESSAGE}
+    webclient-http-error-code: ${WSCLIENTES0108_BANCS_WEBCLIENT_HTTP_ERROR_CODE}
+    webclient-http-error-message: ${WSCLIENTES0108_BANCS_WEBCLIENT_HTTP_ERROR_MESSAGE}
+    timeout-error-code: ${WSCLIENTES0108_BANCS_TIMEOUT_ERROR_CODE}
+    timeout-error-message: ${WSCLIENTES0108_BANCS_TIMEOUT_ERROR_MESSAGE}
+    http-error-trace-id: ${WSCLIENTES0108_BANCS_HTTP_ERROR_TRACE_ID}
+    business-error-code-backend: ${WSCLIENTES0108_BANCS_BUSINESS_ERROR_CODE_BACKEND}
+    business-error-code-bancs: ${WSCLIENTES0108_BANCS_BUSINESS_ERROR_CODE_BANCS}
+    integration-error-code: ${WSCLIENTES0108_BANCS_INTEGRATION_ERROR_CODE}
+    integration-error-message: ${WSCLIENTES0108_BANCS_INTEGRATION_ERROR_MESSAGE}
+    integration-error-type: ${WSCLIENTES0108_BANCS_INTEGRATION_ERROR_TYPE}
+  validation:
+    operation-required:
+      code: ${WSCLIENTES0108_VALIDATION_OPERATION_REQUIRED_CODE}
+      message: ${WSCLIENTES0108_VALIDATION_OPERATION_REQUIRED_MESSAGE}
+    operation-invalid:
+      code: ${WSCLIENTES0108_VALIDATION_OPERATION_INVALID_CODE}
+      message: ${WSCLIENTES0108_VALIDATION_OPERATION_INVALID_MESSAGE}
+    customer-id-required:
+      code: ${WSCLIENTES0108_VALIDATION_CUSTOMER_ID_REQUIRED_CODE}
+      message: ${WSCLIENTES0108_VALIDATION_CUSTOMER_ID_REQUIRED_MESSAGE}
+    natural-customer-invalid:
+      code: ${WSCLIENTES0108_VALIDATION_NATURAL_CUSTOMER_INVALID_CODE}
+      message: ${WSCLIENTES0108_VALIDATION_NATURAL_CUSTOMER_INVALID_MESSAGE}
 
 web-filter:
-  trace-id-header-name: x-guid
+  trace-id-header-name: ${WEB_FILTER_TRACE_ID_HEADER_NAME}
 
 resilience4j:
   circuitbreaker:
-    enabled: false
+    enabled: ${RESILIENCE4J_CIRCUITBREAKER_ENABLED}
 
 optimus:
   web:
     filter:
       excluded-path-patterns:
-        defaults: "/actuator"
+        defaults: ${OPTIMUS_WEB_FILTER_EXCLUDED_PATH_PATTERNS_DEFAULTS}
     headers:
-      enabled: true
+      enabled: ${OPTIMUS_WEB_HEADERS_ENABLED}
       defaults:
         x-app:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_APP_FORWARD}
         x-guid:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_GUID_FORWARD}
         x-channel:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_CHANNEL_FORWARD}
         x-medium:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_MEDIUM_FORWARD}
         x-session:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_SESSION_FORWARD}
         x-device:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_DEVICE_FORWARD}
         x-device-ip:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_DEVICE_IP_FORWARD}
         x-agency:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_AGENCY_FORWARD}
         x-geolocation:
-          forward: true
+          forward: ${OPTIMUS_WEB_HEADERS_DEFAULTS_X_GEOLOCATION_FORWARD}
+
+trace-logger:
+  enabled: ${CGI_TRACE_LOGGER_ENABLED}
+  custom-level:
+    enabled: ${CGI_CUSTOM_LEVEL_ENABLED}
+    infoEnabled: ${CGI_CUSTOM_LEVEL_INFO_ENABLED}
+    debugEnabled: ${CGI_CUSTOM_LEVEL_DEBUG_ENABLED}
+    warnEnabled: ${CGI_CUSTOM_LEVEL_WARN_ENABLED}
+    errorEnabled: ${CGI_CUSTOM_LEVEL_ERROR_ENABLED}

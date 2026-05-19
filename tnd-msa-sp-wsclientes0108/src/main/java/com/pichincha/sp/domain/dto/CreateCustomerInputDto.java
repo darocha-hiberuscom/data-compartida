@@ -1,5 +1,7 @@
 package com.pichincha.sp.domain.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,6 +15,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CreateCustomerInputDto {
 
+    @NotBlank(message = "Valor del campo CIF vacio o invalido")
+    @Pattern(regexp = "^(?!0$).+", message = "Valor del campo CIF vacio o invalido")
     private String customerIdentifier;
     private String primaryLastName;
     private String secondaryLastName;

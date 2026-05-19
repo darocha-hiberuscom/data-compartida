@@ -39,31 +39,31 @@ public class WSClientes0108Controller {
         produces = {MediaType.TEXT_XML_VALUE, MediaType.APPLICATION_XML_VALUE, "application/soap+xml"}
     )
     public Mono<SoapEnvelopeResponse> crearCliente24(@RequestBody @Valid SoapEnvelopeRequest request) {
-    customLogLevelHandler.log(CustomLogLevel.INFO, Thread.currentThread().getStackTrace(),
-        SoapControllerConstants.LOG_SOAP_REQUEST_START);
-    SoapBodyRequest body = Optional.ofNullable(request)
-        .map(SoapEnvelopeRequest::getBody)
-        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
-            SoapControllerConstants.SOAP_BODY_NULL_MESSAGE));
+        customLogLevelHandler.log(CustomLogLevel.INFO, Thread.currentThread().getStackTrace(),
+                SoapControllerConstants.LOG_SOAP_REQUEST_START);
 
-    return routeToOperation(body)
-        .onErrorResume(BusinessValidationException.class,
-            exception -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST, exception.getMessage(), exception)))
-        .onErrorResume(GlobalErrorException.class,
-            exception -> Mono.error(new ResponseStatusException(exception.getStatusCode(), exception.getMessage(), exception)))
-        .onErrorResume(Throwable.class,
-            exception -> Mono.error(new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(), exception)))
-        .doOnSuccess(result -> customLogLevelHandler.log(CustomLogLevel.INFO,
-            Thread.currentThread().getStackTrace(),
-            SoapControllerConstants.LOG_SOAP_REQUEST_END));
+        SoapBodyRequest body = Optional.ofNullable(request)
+                .map(SoapEnvelopeRequest::getBody)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        SoapControllerConstants.SOAP_BODY_NULL_MESSAGE));
+
+        return routeToOperation(body, request)
+                .onErrorResume(BusinessValidationException.class,
+                        exception -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST, exception.getMessage(), exception)))
+                .onErrorResume(GlobalErrorException.class,
+                        exception -> Mono.error(new ResponseStatusException(exception.getStatusCode(), exception.getMessage(), exception)))
+                .onErrorResume(Throwable.class,
+                        exception -> Mono.error(new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage(), exception)))
+                .doOnSuccess(result -> customLogLevelHandler.log(CustomLogLevel.INFO,
+                        Thread.currentThread().getStackTrace(),
+                        SoapControllerConstants.LOG_SOAP_REQUEST_END));
     }
 
-    private Mono<SoapEnvelopeResponse> routeToOperation(SoapBodyRequest body) {
-    return Optional.ofNullable(body.getCrearCliente24())
-        .map(operation -> createCustomerInput.execute(wsClientes0108SoapMapper.toDomain(
-                SoapEnvelopeRequest.builder().body(SoapBodyRequest.builder().crearCliente24(operation).build()).build()))
-            .map(wsClientes0108SoapMapper::toSoapResponse))
-        .orElseGet(() -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST,
-            SoapControllerConstants.NO_VALID_SOAP_OPERATION_MESSAGE)));
+    private Mono<SoapEnvelopeResponse> routeToOperation(SoapBodyRequest body, SoapEnvelopeRequest request) {
+        return Optional.ofNullable(body.getCrearCliente24())
+                .map(operation -> createCustomerInput.execute(wsClientes0108SoapMapper.toDomain(request))
+                        .map(wsClientes0108SoapMapper::toSoapResponse))
+                .orElseGet(() -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        SoapControllerConstants.NO_VALID_SOAP_OPERATION_MESSAGE)));
     }
 }
