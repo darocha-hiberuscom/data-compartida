@@ -61,8 +61,8 @@ public class WSClientes0108Controller {
 
     private Mono<SoapEnvelopeResponse> routeToOperation(SoapBodyRequest body, SoapEnvelopeRequest request) {
         return Optional.ofNullable(body.getCrearCliente24())
-                .map(operation -> createCustomerInput.execute(wsClientes0108SoapMapper.toDomain(request))
-                        .map(wsClientes0108SoapMapper::toSoapResponse))
+                .map(operation -> createCustomerInput.execute(soapDomainMapper.toDomain(request))
+                        .map(domainSoapMapper::toSoapResponse))
                 .orElseGet(() -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST,
                         SoapControllerConstants.NO_VALID_SOAP_OPERATION_MESSAGE)));
     }
