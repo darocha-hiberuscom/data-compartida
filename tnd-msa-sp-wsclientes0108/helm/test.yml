@@ -14,9 +14,9 @@ variables:
 
     routes:
       - security: "https"
-        host: "apps.ocpdev.uiotest.bpichinchatest.test"
+        host: "apps.ocptest.uiotest.bpichinchatest.test"
       - security: "http"
-        host: "apps.ocpdev.uiotest.bpichinchatest.test"
+        host: "apps.ocptest.uiotest.bpichinchatest.test"
 
 global:
   environment: "dev"

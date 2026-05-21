@@ -10,7 +10,8 @@ import java.util.function.BiFunction;
 @Getter
 public abstract sealed class ErrorResolver<T extends Throwable>
         implements BiFunction<ServerWebExchange, T, Object>
-        permits GlobalErrorExceptionResolver, ResponseStatusExceptionResolver, UnexpectedErrorResolver {
+        permits GlobalErrorExceptionResolver, ResponseStatusExceptionResolver, UnexpectedErrorResolver,
+                 BusinessExceptionResolver, BancsIntegrationExceptionResolver {
 
     protected abstract Object buildError(@NonNull ServerHttpResponse serverResponse,
                                          @NonNull final String requestPath,

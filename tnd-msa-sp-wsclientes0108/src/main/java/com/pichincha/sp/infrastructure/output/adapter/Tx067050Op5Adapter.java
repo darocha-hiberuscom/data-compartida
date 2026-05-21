@@ -1,78 +1,42 @@
 package com.pichincha.sp.infrastructure.output.adapter;
 
 import com.pichincha.bnc.apiclient.adapter.BancsClient;
-import com.pichincha.bnc.apiclient.dto.request.BancsRequest;
-import com.pichincha.bnc.apiclient.exception.BancsAPIClientException;
+import com.pichincha.bnc.apiclient.annotations.BancsService;
+import com.pichincha.common.trace.logger.logger.custom.level.CustomLogLevelHandler;
 import com.pichincha.sp.application.port.output.CustomerPersonalDetailOutput;
 import com.pichincha.sp.domain.dto.CustomerLookupRequestDto;
 import com.pichincha.sp.domain.dto.CustomerLookupResponseDto;
 import com.pichincha.sp.infrastructure.constants.BancsAdapterConstants;
-import com.pichincha.sp.infrastructure.exception.GlobalErrorException;
-import com.pichincha.sp.infrastructure.logging.CustomLogLevel;
-import com.pichincha.sp.infrastructure.logging.CustomLogLevelHandler;
 import com.pichincha.sp.infrastructure.logging.annotation.BpLogger;
 import com.pichincha.sp.infrastructure.output.adapter.mapper.BancsDomainMapper;
 import com.pichincha.sp.infrastructure.output.adapter.request.Tx067050Request;
 import com.pichincha.sp.infrastructure.output.adapter.response.Tx067050Response;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
-@Component
-public class Tx067050Op5Adapter implements CustomerPersonalDetailOutput {
+@Repository
+public class Tx067050Op5Adapter extends AbstractBancsTransactionAdapter implements CustomerPersonalDetailOutput {
 
-    private final BancsClient bancsClient;
-    private final BancsDomainMapper bancsDomainMapper;
-    private final CustomLogLevelHandler customLogLevelHandler;
+    private final BancsDomainMapper mapper;
 
-    public Tx067050Op5Adapter(BancsClient bancsClient,
-                               BancsDomainMapper bancsDomainMapper,
-                               CustomLogLevelHandler customLogLevelHandler) {
-        this.bancsClient = bancsClient;
-        this.bancsDomainMapper = bancsDomainMapper;
-        this.customLogLevelHandler = customLogLevelHandler;
+    public Tx067050Op5Adapter(
+            @BancsService("customer-profile") BancsClient bancsClient,
+            CustomLogLevelHandler customLogLevelHandler,
+            BancsDomainMapper mapper,
+            BancsErrorHandlerAdapter bancsAdapterErrorHandler) {
+        super(bancsClient, customLogLevelHandler, bancsAdapterErrorHandler);
+        this.mapper = mapper;
     }
 
     @Override
     @BpLogger
     public Mono<CustomerLookupResponseDto> getCustomerPersonalDetail(CustomerLookupRequestDto request) {
-        Tx067050Request bodyDto = bancsDomainMapper.toTx067050Request(request);
-
-        BancsRequest<Tx067050Request> bancsRequest = BancsRequest.<Tx067050Request>builder()
-                .transactionId(BancsAdapterConstants.TX_067050)
-                .body(bodyDto)
-                .build();
-
-        return bancsClient.call(bancsRequest, Tx067050Response.class, BancsAdapterConstants.TX_067050_OP_5)
-                .map(bancsDomainMapper::toLookupResponse)
-                .onErrorMap(ex -> {
-                    if (ex instanceof BancsAPIClientException) {
-                        customLogLevelHandler.log(
-                                CustomLogLevel.ERROR,
-                                Thread.currentThread().getStackTrace(),
-                                BancsAdapterConstants.LOG_BANCS_CLIENT_EXCEPTION,
-                                BancsAdapterConstants.TX_067050_OP_5,
-                                ex.getMessage());
-                        return new GlobalErrorException(
-                                BancsAdapterConstants.ERROR_TX067050_OP5_HEADER,
-                                BancsAdapterConstants.TX_067050_OP_5,
-                                BancsAdapterConstants.DEFAULT_ERROR_STATUS);
-                    }
-                    customLogLevelHandler.log(
-                            CustomLogLevel.ERROR,
-                            Thread.currentThread().getStackTrace(),
-                            BancsAdapterConstants.LOG_UNEXPECTED_ERROR,
-                            BancsAdapterConstants.TX_067050_OP_5,
-                            ex.getMessage() != null ? ex.getMessage() : "");
-                    return new GlobalErrorException(
-                            BancsAdapterConstants.ERROR_TX067050_OP5_HEADER + ": " + ex.getMessage(),
-                            BancsAdapterConstants.TX_067050_OP_5,
-                            BancsAdapterConstants.DEFAULT_ERROR_STATUS);
-                })
-                .doFinally(signalType -> customLogLevelHandler.log(
-                        CustomLogLevel.INFO,
-                        Thread.currentThread().getStackTrace(),
-                        BancsAdapterConstants.LOG_FLOW_FINISHED,
-                        BancsAdapterConstants.TX_067050_OP_5,
-                        signalType));
+        Tx067050Request bodyDto = mapper.toTx067050Request(request);
+        return executeTransaction(
+                BancsAdapterConstants.TX_067050,
+                bodyDto,
+                Tx067050Response.class,
+                BancsAdapterConstants.TX_067050_OP_5,
+                mapper::toLookupResponse);
     }
 }

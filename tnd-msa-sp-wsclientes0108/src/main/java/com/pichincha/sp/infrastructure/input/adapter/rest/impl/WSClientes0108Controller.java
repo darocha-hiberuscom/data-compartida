@@ -4,7 +4,8 @@ import com.pichincha.sp.application.port.input.CreateCustomerInput;
 import com.pichincha.sp.infrastructure.constants.SoapControllerConstants;
 import com.pichincha.sp.infrastructure.exception.BusinessValidationException;
 import com.pichincha.sp.infrastructure.exception.GlobalErrorException;
-import com.pichincha.sp.infrastructure.input.adapter.rest.mapper.WsClientes0108SoapMapper;
+import com.pichincha.sp.infrastructure.input.adapter.rest.mapper.DomainToSoapMapper;
+import com.pichincha.sp.infrastructure.input.adapter.rest.mapper.SoapToDomainMapper;
 import com.pichincha.sp.infrastructure.input.adapter.soap.dto.request.SoapBodyRequest;
 import com.pichincha.sp.infrastructure.input.adapter.soap.dto.request.SoapEnvelopeRequest;
 import com.pichincha.sp.infrastructure.input.adapter.soap.dto.response.SoapEnvelopeResponse;
@@ -30,7 +31,8 @@ import java.util.Optional;
 public class WSClientes0108Controller {
 
     private final CreateCustomerInput createCustomerInput;
-    private final WsClientes0108SoapMapper wsClientes0108SoapMapper;
+    private final SoapToDomainMapper soapToDomainMapper;
+    private final DomainToSoapMapper domainToSoapMapper;
     private final CustomLogLevelHandler customLogLevelHandler;
 
     @BpTraceable
@@ -61,8 +63,8 @@ public class WSClientes0108Controller {
 
     private Mono<SoapEnvelopeResponse> routeToOperation(SoapBodyRequest body, SoapEnvelopeRequest request) {
         return Optional.ofNullable(body.getCrearCliente24())
-                .map(operation -> createCustomerInput.execute(soapDomainMapper.toDomain(request))
-                        .map(domainSoapMapper::toSoapResponse))
+                .map(operation -> createCustomerInput.execute(soapToDomainMapper.toDomain(request))
+                        .map(domainToSoapMapper::toSoap))
                 .orElseGet(() -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST,
                         SoapControllerConstants.NO_VALID_SOAP_OPERATION_MESSAGE)));
     }

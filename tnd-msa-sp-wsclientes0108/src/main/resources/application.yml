@@ -15,13 +15,18 @@ spring:
     medium: ${SPRING_HEADER_MEDIUM}
 
 bancs:
-  webclient:
-    max-connections: ${BANCS_WEBCLIENT_MAX_CONNECTIONS}
-    max-idle-time: ${BANCS_WEBCLIENT_MAX_IDLE_TIME}
-    pending-acquire-max-count: ${BANCS_WEBCLIENT_PENDING_ACQUIRE_MAX_COUNT}
-    pending-acquire-timeout: ${BANCS_WEBCLIENT_PENDING_ACQUIRE_TIMEOUT}
-    max-in-memory-size: ${BANCS_WEBCLIENT_MAX_IN_MEMORY_SIZE}
-    base-url: ${BANCS_BASE_URL}
+  tx-position: ${BANCS_TX_POSITION}
+  webclients:
+    customers-profile:
+      max-in-memory-size: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_MAX_IN_MEMORY_SIZE}
+      base-url: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_BASE_URL}
+      connector:
+        connect-timeout: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_CONNECT_TIMEOUT}
+        read-timeout: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_READ_TIMEOUT}
+        max-connections: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_MAX_CONNECTIONS}
+        max-idle-time: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_MAX_IDLE_TIME}
+        pending-acquire-max-count: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_PENDING_ACQUIRE_MAX_COUNT}
+        pending-acquire-timeout: ${BANCS_WEBCLIENT_CUSTOMERS_PROFILE_PENDING_ACQUIRE_TIMEOUT}
   iib-support:
     enabled: ${BANCS_IIB_SUPPORT_ENABLED}
 

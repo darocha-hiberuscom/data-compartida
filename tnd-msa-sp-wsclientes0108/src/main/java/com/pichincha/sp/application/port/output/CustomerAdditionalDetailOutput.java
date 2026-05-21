@@ -1,0 +1,11 @@
+package com.pichincha.sp.application.port.output;
+
+import com.pichincha.sp.domain.dto.CustomerLookupRequestDto;
+import com.pichincha.sp.domain.dto.CustomerLookupResponseDto;
+import reactor.core.publisher.Mono;
+
+public interface CustomerAdditionalDetailOutput {
+
+    Mono<CustomerLookupResponseDto> getCustomerAdditionalDetail(CustomerLookupRequestDto request);
+}
+
