@@ -1,0 +1,92 @@
+url
+http://tpr-msa-sp-wsproductos0123.apps.ocpdev.uiotest.bpichinchatest.test/WSProductos0123/soap/WSProductos0123Request
+
+Request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:consultarCatalogoTarjeta02>
+         <!--Optional:-->
+         <headerIn>
+            <dispositivo>wpuMfBm9qufJbvXH/sIGIMsYy5ZeSjMFymUjH53c4DY</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010003</medio>
+            <aplicacion>00657</aplicacion>
+            <agencia>25</agencia>
+            <tipoTransaccion>202012302</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad/>
+            <guid>8e6f64290cf047a7bf92a9c2c227da7a</guid>
+            <fechaHora>201905061026260000</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>vywcrdecokoe1yrjwpaule52</sesion>
+            <ip>10.0.176.216</ip>
+            <idCliente>1721290128</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+
+         </headerIn>
+         <!--Optional:-->
+         <bodyIn>
+            <codigoProductoCredito>2</codigoProductoCredito>
+            <!--Optional:-->
+            <bin>445447</bin>
+
+         </bodyIn>
+      </ser:consultarCatalogoTarjeta02>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Response
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <ns2:consultarCatalogoTarjeta02Response xmlns:ns2="http://bpichincha.com/servicios">
+         <headerOut>
+            <dispositivo>wpuMfBm9qufJbvXH/sIGIMsYy5ZeSjMFymUjH53c4DY</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010003</medio>
+            <aplicacion>00657</aplicacion>
+            <agencia>25</agencia>
+            <tipoTransaccion>202012302</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad/>
+            <guid>8e6f64290cf047a7bf92a9c2c227da7a</guid>
+            <fechaHora>201905061026260000</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>vywcrdecokoe1yrjwpaule52</sesion>
+            <ip>10.0.176.216</ip>
+            <idCliente>1721290128</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+         </headerOut>
+         <bodyOut>
+            <productoCredito>
+               <codigoProductoCredito>2</codigoProductoCredito>
+               <descripcion>Efectivo Express</descripcion>
+               <codigoProceso>002</codigoProceso>
+               <codigoReverso>002</codigoReverso>
+               <codigoTipoCredito>02</codigoTipoCredito>
+               <montoMinimo>100.0</montoMinimo>
+               <montoMaximo>25000.0</montoMaximo>
+               <tipoTarjeta>VS</tipoTarjeta>
+               <codigoProductoTransaccional>CRM02</codigoProductoTransaccional>
+               <mensajeProducto>Se aplicará una comisión de $4.46 + IVA por cada $100 con un máximo de $150 inc IVA. La tasa nominal aplicada para empleados de Banco Pichincha y sus filiales es 11.39%</mensajeProducto>
+               <bancoEmisor>BPI</bancoEmisor>
+            </productoCredito>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>          
+            <tipo>INFO</tipo>
+            <recurso>tpr-msa-sp-wsproductos0123/consultarCatalogoTarjeta02</recurso>
+            <componente>consultarCatalogoTarjeta02</componente>
+            <backend/>
+         </error>
+      </ns2:consultarCatalogoTarjeta02Response>
+   </soapenv:Body>
+</soapenv:Envelope>

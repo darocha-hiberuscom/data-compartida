@@ -1,0 +1,138 @@
+
+URL
+curl --location "https://tnd-msa-sp-wsproductos0024-enp.apps.ocpdev.uiotest.bpichinchatest.test/IntegrationBus/soap/WSProductos0024"   --header "Content-Type: text/xml; charset=utf-8"
+
+Request
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarDescripcionTodosProductos01>
+         <!--Optional:-->
+         <headerIn>
+            <dispositivo>?</dispositivo>
+            <empresa>?</empresa>
+            <canal>?</canal>
+            <medio>?</medio>
+            <aplicacion>?</aplicacion>
+            <agencia>?</agencia>
+            <tipoTransaccion>?</tipoTransaccion>
+            <geolocalizacion>?</geolocalizacion>
+            <usuario>?</usuario>
+            <unicidad>?</unicidad>
+            <guid>?</guid>
+            <fechaHora>?</fechaHora>
+            <filler>?</filler>
+            <idioma>?</idioma>
+            <sesion>?</sesion>
+            <ip>?</ip>
+            <idCliente>?</idCliente>
+            <tipoIdCliente>?</tipoIdCliente>
+            <!--Optional:-->
+            <documento>
+               <!--Optional:-->
+               <fechaContable>?</fechaContable>
+               <!--Optional:-->
+               <numeroDocumento>?</numeroDocumento>
+               <!--Optional:-->
+               <journals>
+                  <!--Zero or more repetitions:-->
+                  <journal>
+                     <!--Optional:-->
+                     <valor>?</valor>
+                  </journal>
+               </journals>
+            </documento>
+         </headerIn>
+         <!--Optional:-->
+         <bodyIn>
+            <ordenante>
+               <cif>?</cif>
+            </ordenante>
+         </bodyIn>
+      </ser:ConsultarDescripcionTodosProductos01>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Response
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarDescripcionTodosProductos01Response>
+         <!--Optional:-->
+         <headerOut>
+            <dispositivo>?</dispositivo>
+            <empresa>?</empresa>
+            <canal>?</canal>
+            <medio>?</medio>
+            <aplicacion>?</aplicacion>
+            <agencia>?</agencia>
+            <tipoTransaccion>?</tipoTransaccion>
+            <geolocalizacion>?</geolocalizacion>
+            <usuario>?</usuario>
+            <unicidad>?</unicidad>
+            <guid>?</guid>
+            <fechaHora>?</fechaHora>
+            <filler>?</filler>
+            <idioma>?</idioma>
+            <sesion>?</sesion>
+            <ip>?</ip>
+            <idCliente>?</idCliente>
+            <tipoIdCliente>?</tipoIdCliente>
+            <!--Optional:-->
+            <documento>
+               <!--Optional:-->
+               <fechaContable>?</fechaContable>
+               <!--Optional:-->
+               <numeroDocumento>?</numeroDocumento>
+               <!--Optional:-->
+               <journals>
+                  <!--Zero or more repetitions:-->
+                  <journal>
+                     <!--Optional:-->
+                     <valor>?</valor>
+                  </journal>
+               </journals>
+            </documento>
+         </headerOut>
+         <!--Optional:-->
+         <bodyOut>
+            <!--Optional:-->
+            <productos>
+               <!--1 or more repetitions:-->
+               <producto>
+                  <cif>?</cif>
+                  <numero>?</numero>
+                  <principal>?</principal>
+                  <alias>?</alias>
+                  <tipo>?</tipo>
+                  <!--Optional:-->
+                  <idProducto>?</idProducto>
+                  <!--Optional:-->
+                  <descripcion>?</descripcion>
+                  <!--Optional:-->
+                  <subtipo>?</subtipo>
+               </producto>
+            </productos>
+         </bodyOut>
+         <!--Optional:-->
+         <error>
+            <!--Optional:-->
+            <codigo>?</codigo>
+            <!--Optional:-->
+            <mensaje>?</mensaje>
+            <mensajeNegocio>?</mensajeNegocio>
+            <!--Optional:-->
+            <tipo>?</tipo>
+            <!--Optional:-->
+            <recurso>?</recurso>
+            <!--Optional:-->
+            <componente>?</componente>
+            <!--Optional:-->
+            <backend>?</backend>
+         </error>
+      </ser:ConsultarDescripcionTodosProductos01Response>
+   </soapenv:Body>
+</soapenv:Envelope>

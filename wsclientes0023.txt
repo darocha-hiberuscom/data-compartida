@@ -1,0 +1,177 @@
+url
+
+https://tnd-msa-sp-cfi-wsclientes0060-enp.apps.ocpdev.uiotest.bpichinchatest.test/WSProductos0023/soap/WSProductos0023Request
+
+
+Request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarConfiguracionProducto01>
+         <headerIn>
+            <dispositivo/>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020001</medio>
+            <aplicacion>00693</aplicacion>
+            <agencia/>
+            <tipoTransaccion>203000301</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad/>
+            <guid>490c4511-8f02-4adb-8d99-1f30376550c0</guid>
+            <fechaHora>202008250043470090</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>8fdc526c-012d-49bc-9c07-fe8cc9305149</sesion>
+            <ip>10.0.232.186</ip>
+            <idCliente>1752608636</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <documento>
+               <fechaContable/>
+               <numeroDocumento/>
+               <journals>
+                  <journal>
+                     <valor/>
+                  </journal>
+               </journals>
+            </documento>
+         </headerIn>
+         <bodyIn>
+            <productos>
+               <producto><tipo>ahorro</tipo></producto>
+               <producto><tipo>prestamo</tipo></producto>
+               <producto><tipo>corriente</tipo></producto>
+               <producto><tipo>tarjeta</tipo></producto>
+               <producto><tipo>inversion</tipo></producto>
+            </productos>
+         </bodyIn>
+      </ser:ConsultarConfiguracionProducto01>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Response
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <ns2:ConsultarConfiguracionProducto01Response xmlns:ns2="http://bpichincha.com/servicios">
+         <headerOut>
+            <dispositivo/>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020001</medio>
+            <aplicacion>00693</aplicacion>
+            <agencia/>
+            <tipoTransaccion>203000301</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad/>
+            <guid>490c4511-8f02-4adb-8d99-1f30376550c0</guid>
+            <fechaHora>202008250043470090</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>8fdc526c-012d-49bc-9c07-fe8cc9305149</sesion>
+            <ip>10.0.232.186</ip>
+            <idCliente>1752608636</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <documento>
+               <fechaContable/>
+               <numeroDocumento/>
+               <journals>
+                  <journal>
+                     <valor/>
+                  </journal>
+               </journals>
+            </documento>
+         </headerOut>
+         <bodyOut>
+            <productos>
+               <producto>
+                  <tipo>ahorro</tipo>
+                  <atributos>
+                     <atributo>
+                        <nombre>PERMITE_DESCRIPCION</nombre>
+                        <valor>true</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo ahorro le pueden agregar un alias/descripcion.</descripcion>
+                     </atributo>
+                     <atributo>
+                        <nombre>EVALUAR_PERMITE_ACTIVAR_MONTOS</nombre>
+                        <valor>true</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo ahorro pueden ser activados para transacciones.</descripcion>
+                     </atributo>
+                  </atributos>
+               </producto>
+               <producto>
+                  <tipo>prestamo</tipo>
+                  <atributos>
+                     <atributo>
+                        <nombre>PERMITE_DESCRIPCION</nombre>
+                        <valor>false</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo prestamo le pueden agregar un alias/descripcion.</descripcion>
+                     </atributo>
+                     <atributo>
+                        <nombre>EVALUAR_PERMITE_ACTIVAR_MONTOS</nombre>
+                        <valor>false</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo prestamo pueden ser activados para transacciones.</descripcion>
+                     </atributo>
+                  </atributos>
+               </producto>
+               <producto>
+                  <tipo>corriente</tipo>
+                  <atributos>
+                     <atributo>
+                        <nombre>PERMITE_DESCRIPCION</nombre>
+                        <valor>true</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo corriente le pueden agregar un alias/descripcion.</descripcion>
+                     </atributo>
+                     <atributo>
+                        <nombre>EVALUAR_PERMITE_ACTIVAR_MONTOS</nombre>
+                        <valor>true</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo corriente pueden ser activados para transacciones.</descripcion>
+                     </atributo>
+                  </atributos>
+               </producto>
+               <producto>
+                  <tipo>tarjeta</tipo>
+                  <atributos>
+                     <atributo>
+                        <nombre>PERMITE_DESCRIPCION</nombre>
+                        <valor>true</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo tarjeta le pueden agregar un alias/descripcion.</descripcion>
+                     </atributo>
+                     <atributo>
+                        <nombre>EVALUAR_PERMITE_ACTIVAR_MONTOS</nombre>
+                        <valor>false</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo tarjeta pueden ser activados para transacciones.</descripcion>
+                     </atributo>
+                  </atributos>
+               </producto>
+               <producto>
+                  <tipo>inversion</tipo>
+                  <atributos>
+                     <atributo>
+                        <nombre>PERMITE_DESCRIPCION</nombre>
+                        <valor>false</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo inversion le pueden agregar un alias/descripcion.</descripcion>
+                     </atributo>
+                     <atributo>
+                        <nombre>EVALUAR_PERMITE_ACTIVAR_MONTOS</nombre>
+                        <valor>false</valor>
+                        <descripcion>Flag para activar/desactivar si los productos de tipo inversion pueden ser activados para transacciones.</descripcion>
+                     </atributo>
+                  </atributos>
+               </producto>
+            </productos>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tpr-msa-sp-wsproductos0023/ConsultarConfiguracionProducto01</recurso>
+            <componente>ConsultarConfiguracionProducto01</componente>
+            <backend>00638</backend>
+         </error>
+      </ns2:ConsultarConfiguracionProducto01Response>
+   </soapenv:Body>
+</soapenv:Envelope>

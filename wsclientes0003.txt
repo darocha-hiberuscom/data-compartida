@@ -1,0 +1,163 @@
+url
+
+
+URL
+curl --location "https://tnd-msa-sp-wsproductos0024-enp.apps.ocpdev.uiotest.bpichinchatest.test/IntegrationBus/soap/WSProductos0024"   --header "Content-Type: text/xml; charset=utf-8"
+
+
+
+Request
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarTarjetasActivas01>
+         <headerIn>
+            <dispositivo>39uRsmg5+ixsCOfElDAfyc6qfDcV1jDYMAfjKNWNM6E=</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00647</aplicacion>
+            <agencia/>
+            <tipoTransaccion>201000301</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad/>
+            <guid>2db8d2bf1bbd4a9bb61ce2b169c1babb</guid>
+            <fechaHora>201905141052230026</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>4590530d-d2b4-4814-b116-8c43a9838318</sesion>
+            <ip>10.0.176.129</ip>
+            <idCliente>1707659304</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>1</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+         </headerIn>
+         <bodyIn>
+            <identificacion>170765930411213</identificacion>
+            <tipoIdentificacion>0001</tipoIdentificacion>
+         </bodyIn>
+      </ser:ConsultarTarjetasActivas01>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Response
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<NS1:Envelope xmlns:NS1="http://schemas.xmlsoap.org/soap/envelope/">
+    <NS1:Body>
+        <NS2:ConsultarTarjetasActivas01Response xmlns:NS2="http://bpichincha.com/servicios">
+            <headerOut>
+                <dispositivo>39uRsmg5+ixsCOfElDAfyc6qfDcV1jDYMAfjKNWNM6E=</dispositivo>
+                <empresa>0010</empresa>
+                <canal>02</canal>
+                <medio>020002</medio>
+                <aplicacion>00647</aplicacion>
+                <agencia></agencia>
+                <tipoTransaccion>201000301</tipoTransaccion>
+                <geolocalizacion></geolocalizacion>
+                <usuario>USINTERT</usuario>
+                <unicidad></unicidad>
+                <guid>2db8d2bf1bbd4a9bb61ce2b169c1babb</guid>
+                <fechaHora>201905141052230026</fechaHora>
+                <filler></filler>
+                <idioma>es-EC</idioma>
+                <sesion>4590530d-d2b4-4814-b116-8c43a9838318</sesion>
+                <ip>10.0.176.129</ip>
+                <idCliente>1707659304</idCliente>
+                <tipoIdCliente>0001</tipoIdCliente>
+                <bancs>
+                    <teller>00070560</teller>
+                    <terminal>1</terminal>
+                    <institucion>0010</institucion>
+                    <agencia>1</agencia>
+                    <estacion>1</estacion>
+                    <aplicacion></aplicacion>
+                    <canal></canal>
+                </bancs>
+                <documento>
+                    <fechaContable></fechaContable>
+                    <numeroDocumento></numeroDocumento>
+                    <journals>
+                        <journal>
+                            <valor></valor>
+                        </journal>
+                    </journals>
+                </documento>
+            </headerOut>
+            <bodyOut>
+                <titular>ENDARA GOMEZ DORIS PAULINA</titular>
+                <tarjetas>
+                    <tarjeta>
+                        <tipoEmisor>D</tipoEmisor>
+                        <emisor>Diners Club</emisor>
+                        <tipoTarjeta>CUENTA DINERS MILES INT.PER</tipoTarjeta>
+                        <numeroTarjeta>36085700046625</numeroTarjeta>
+                        <fechaProximoPago></fechaProximoPago>
+                        <totalPagarFecha>50.84</totalPagarFecha>
+                        <minimoPagar>0</minimoPagar>
+                        <saldoTarjeta>50.84</saldoTarjeta>
+                    </tarjeta>
+                    <tarjeta>
+                        <tipoEmisor>V</tipoEmisor>
+                        <emisor>Visa</emisor>
+                        <tipoTarjeta>CUENTA TITANIUM SIGNATURE AA</tipoTarjeta>
+                        <numeroTarjeta>4147570010006730</numeroTarjeta>
+                        <fechaProximoPago></fechaProximoPago>
+                        <totalPagarFecha>0.00</totalPagarFecha>
+                        <minimoPagar>0.00</minimoPagar>
+                        <saldoTarjeta>0.00</saldoTarjeta>
+                    </tarjeta>
+                    <tarjeta>
+                        <tipoEmisor>V</tipoEmisor>
+                        <emisor>Visa</emisor>
+                        <tipoTarjeta>CUENTA VISA INFINITE LANPASS</tipoTarjeta>
+                        <numeroTarjeta>4514320003003616</numeroTarjeta>
+                        <fechaProximoPago></fechaProximoPago>
+                        <totalPagarFecha>0.00</totalPagarFecha>
+                        <minimoPagar>0.00</minimoPagar>
+                        <saldoTarjeta>0.00</saldoTarjeta>
+                    </tarjeta>
+                    <tarjeta>
+                        <tipoEmisor>M</tipoEmisor>
+                        <emisor>Mastercard</emisor>
+                        <tipoTarjeta>CUENTA MC BLACK LANPASS</tipoTarjeta>
+                        <numeroTarjeta>5466050000351354</numeroTarjeta>
+                        <fechaProximoPago></fechaProximoPago>
+                        <totalPagarFecha>0.00</totalPagarFecha>
+                        <minimoPagar>0.00</minimoPagar>
+                        <saldoTarjeta>0.00</saldoTarjeta>
+                    </tarjeta>
+                    <tarjeta>
+                        <tipoEmisor>I</tipoEmisor>
+                        <emisor>Discover Diners Club</emisor>
+                        <tipoTarjeta>CUENTA DISCOVER(26 ANIOS O MAS)</tipoTarjeta>
+                        <numeroTarjeta>6557320000424016</numeroTarjeta>
+                        <fechaProximoPago></fechaProximoPago>
+                        <totalPagarFecha>54.19</totalPagarFecha>
+                        <minimoPagar>54.19</minimoPagar>
+                        <saldoTarjeta>54.19</saldoTarjeta>
+                    </tarjeta>
+                </tarjetas>
+            </bodyOut>
+            <error>
+                <codigo>0</codigo>
+                <mensaje>TCSBRKR1_BP-OK</mensaje>
+                <mensajeNegocio></mensajeNegocio>
+                <tipo>INFO</tipo>
+                <recurso>WSClientes0003/ConsultarTarjetasActivas01</recurso>
+                <componente>WSClientes0003</componente>
+                <backend>00638</backend>
+            </error>
+        </NS2:ConsultarTarjetasActivas01Response>
+    </NS1:Body>
+</NS1:Envelope>

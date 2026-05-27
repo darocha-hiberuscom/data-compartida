@@ -1,0 +1,210 @@
+url
+https://tnd-msa-sp-wsproductos0118-enp.apps.ocptest.uiotest.bpichinchatest.test/WSProductos0118/soap/WSProductos0118Request
+
+Request
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:consultarClienteInterdin02>
+         <!--Optional:-->
+         <headerIn>
+            <dispositivo>?</dispositivo>
+            <empresa>?</empresa>
+            <canal>?</canal>
+            <medio>?</medio>
+            <aplicacion>?</aplicacion>
+            <agencia>?</agencia>
+            <tipoTransaccion>?</tipoTransaccion>
+            <geolocalizacion>?</geolocalizacion>
+            <usuario>?</usuario>
+            <unicidad>?</unicidad>
+            <guid>?</guid>
+            <fechaHora>?</fechaHora>
+            <filler>?</filler>
+            <idioma>?</idioma>
+            <sesion>?</sesion>
+            <ip>?</ip>
+            <idCliente>?</idCliente>
+            <tipoIdCliente>?</tipoIdCliente>
+            <!--Optional:-->
+            <documento>
+               <!--Optional:-->
+               <fechaContable>?</fechaContable>
+               <!--Optional:-->
+               <numeroDocumento>?</numeroDocumento>
+               <!--Optional:-->
+               <journals>
+                  <!--Zero or more repetitions:-->
+                  <journal>
+                     <!--Optional:-->
+                     <valor>?</valor>
+                  </journal>
+               </journals>
+            </documento>
+
+         </headerIn>
+         <!--Optional:-->
+         <bodyIn>
+            <!--Optional:-->
+            <identificacion>0602190886</identificacion>
+            <!--Optional:-->
+            <datosTarjeta></datosTarjeta>
+            <!--Optional:-->
+            <estado>1</estado>
+         </bodyIn>
+      </ser:consultarClienteInterdin02>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:actualizarClienteInterdin31>
+         <!--Optional:-->
+         <headerIn>
+            <dispositivo>?</dispositivo>
+            <empresa>?</empresa>
+            <canal>?</canal>
+            <medio>?</medio>
+            <aplicacion>?</aplicacion>
+            <agencia>?</agencia>
+            <tipoTransaccion>?</tipoTransaccion>
+            <geolocalizacion>?</geolocalizacion>
+            <usuario>?</usuario>
+            <unicidad>?</unicidad>
+            <guid>?</guid>
+            <fechaHora>?</fechaHora>
+            <filler>?</filler>
+            <idioma>?</idioma>
+            <sesion>?</sesion>
+            <ip>?</ip>
+            <idCliente>?</idCliente>
+            <tipoIdCliente>?</tipoIdCliente>
+            <!--Optional:-->
+            <documento>
+               <!--Optional:-->
+               <fechaContable>?</fechaContable>
+               <!--Optional:-->
+               <numeroDocumento>?</numeroDocumento>
+               <!--Optional:-->
+               <journals>
+                  <!--Zero or more repetitions:-->
+                  <journal>
+                     <!--Optional:-->
+                     <valor>?</valor>
+                  </journal>
+               </journals>
+            </documento>
+         </headerIn>
+         <!--Optional:-->
+         <bodyIn>
+            <!--Optional:-->
+            <identificacion>0602157588</identificacion>
+            <!--Optional:-->
+            <datosTarjeta><![CDATA[<?xml version="1.0" encoding="UTF-8"?><XMLDATA><TCOM><TCO1><MTO>111r84r76r246r202r15r50r93r10r87r138r97r208r82r23r250r</MTO><TTO>179r35r39r111r152r30r46r33r158r163r217r55r222r251r3r76r155r241r126r8r58r59r16r168r28r80r71r231r174r245r222r183r</TTO><NTO>3r156r117r231r131r247r170r197r108r205r16r71r233r94r168r178r208r121r87r47r213r28r73r218r</NTO><FPTO>48r198r90r193r154r152r129r146r197r101r125r94r221r130r22r13r</FPTO><PMTO>159r223r172r238r104r212r12r87r</PMTO><TPTO>159r223r172r238r104r212r12r87r</TPTO><SAD>124r132r198r28r173r131r62r196r</SAD></TCO1></TCOM><CTO>213r216r28r130r231r152r216r191r199r169r101r112r33r133r4r126r230r22r218r226r119r188r206r166r7r165r152r107r187r212r0r31r</CTO></XMLDATA>]]></datosTarjeta>
+            <!--Optional:-->
+            <estado>1</estado>
+         </bodyIn>
+      </ser:actualizarClienteInterdin31>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+Response
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns3:consultarClienteInterdin02Response xmlns:ns3="http://bpichincha.com/servicios">
+         <headerOut>
+            <dispositivo>?</dispositivo>
+            <empresa>?</empresa>
+            <canal>?</canal>
+            <medio>?</medio>
+            <aplicacion>?</aplicacion>
+            <agencia>?</agencia>
+            <tipoTransaccion>?</tipoTransaccion>
+            <geolocalizacion>?</geolocalizacion>
+            <usuario>?</usuario>
+            <unicidad>?</unicidad>
+            <guid>?</guid>
+            <fechaHora>?</fechaHora>
+            <filler>?</filler>
+            <idioma>?</idioma>
+            <sesion>?</sesion>
+            <ip>?</ip>
+            <idCliente>?</idCliente>
+            <tipoIdCliente>?</tipoIdCliente>
+         </headerOut>
+         <bodyOut>
+            <clienteTarjetas>
+               <clienteTarjeta>
+                  <datosTarjeta><![CDATA[<?xml version="1.0" encoding="UTF-8"?><XMLDATA><TCOM><TCO1><MTO>111r84r76r246r202r15r50r93r10r87r138r97r208r82r23r250r</MTO><TTO>179r35r39r111r152r30r46r33r158r163r217r55r222r251r3r76r155r241r126r8r58r59r16r168r28r80r71r231r174r245r222r183r</TTO><NTO>3r156r117r231r131r247r170r197r108r205r16r71r233r94r168r178r208r121r87r47r213r28r73r218r</NTO><FPTO>48r198r90r193r154r152r129r146r197r101r125r94r221r130r22r13r</FPTO><PMTO>159r223r172r238r104r212r12r87r</PMTO><TPTO>159r223r172r238r104r212r12r87r</TPTO><SAD>124r132r198r28r173r131r62r196r</SAD></TCO1></TCOM><CTO>213r216r28r130r231r152r216r191r199r169r101r112r33r133r4r126r230r22r218r226r119r188r206r166r7r165r152r107r187r212r0r31r</CTO></XMLDATA>]]></datosTarjeta>
+                  <estado>1</estado>
+                  <identificacion>0602190886</identificacion>
+               </clienteTarjeta>
+            </clienteTarjetas>
+         </bodyOut>
+         <error>
+            <codigo>0003</codigo>
+            <mensaje>El cliente tiene los datos completos</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tnd-msa-sp-wsproductos0118/consultarClienteInterdin02</recurso>
+            <componente>tnd-msa-sp-wsproductos0118</componente>
+            <backend>00633</backend>
+         </error>
+      </ns3:consultarClienteInterdin02Response>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns3:consultarClienteInterdin02Response xmlns:ns3="http://bpichincha.com/servicios">
+         <headerOut>
+            <dispositivo>?</dispositivo>
+            <empresa>?</empresa>
+            <canal>?</canal>
+            <medio>?</medio>
+            <aplicacion>?</aplicacion>
+            <agencia>?</agencia>
+            <tipoTransaccion>?</tipoTransaccion>
+            <geolocalizacion>?</geolocalizacion>
+            <usuario>?</usuario>
+            <unicidad>?</unicidad>
+            <guid>?</guid>
+            <fechaHora>?</fechaHora>
+            <filler>?</filler>
+            <idioma>?</idioma>
+            <sesion>?</sesion>
+            <ip>?</ip>
+            <idCliente>?</idCliente>
+            <tipoIdCliente>?</tipoIdCliente>
+         </headerOut>
+         <bodyOut>
+            <clienteTarjetas>
+               <clienteTarjeta>
+                  <datosTarjeta><![CDATA[<?xml version="1.0" encoding="UTF-8"?><XMLDATA><TCOM><TCO1><MTO>111r84r76r246r202r15r50r93r10r87r138r97r208r82r23r250r</MTO><TTO>179r35r39r111r152r30r46r33r158r163r217r55r222r251r3r76r155r241r126r8r58r59r16r168r28r80r71r231r174r245r222r183r</TTO><NTO>3r156r117r231r131r247r170r197r108r205r16r71r233r94r168r178r208r121r87r47r213r28r73r218r</NTO><FPTO>48r198r90r193r154r152r129r146r197r101r125r94r221r130r22r13r</FPTO><PMTO>159r223r172r238r104r212r12r87r</PMTO><TPTO>159r223r172r238r104r212r12r87r</TPTO><SAD>124r132r198r28r173r131r62r196r</SAD></TCO1></TCOM><CTO>213r216r28r130r231r152r216r191r199r169r101r112r33r133r4r126r230r22r218r226r119r188r206r166r7r165r152r107r187r212r0r31r</CTO></XMLDATA>]]></datosTarjeta>
+                  <estado>1</estado>
+                  <identificacion>0602157588</identificacion>
+               </clienteTarjeta>
+            </clienteTarjetas>
+         </bodyOut>
+         <error>
+            <codigo>0000</codigo>
+            <mensaje>El cliente fue actualizado correctamente</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tnd-msa-sp-wsproductos0118/actualizarClienteInterdin31</recurso>
+            <componente>tnd-msa-sp-wsproductos0118</componente>
+            <backend>00633</backend>
+         </error>
+      </ns3:consultarClienteInterdin02Response>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

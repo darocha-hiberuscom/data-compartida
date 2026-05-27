@@ -1,0 +1,119 @@
+url
+https://tpr-msa-sp-wsclientes0002-enp.apps.ocptest.uiotest.bpichinchatest.test/WSClientes0002/soap/WSClientes0002Request
+
+Request
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:consultarPrestamosActivos01>
+         <!--Optional:-->
+         <headerIn>
+            <dispositivo>DEVICE123</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00270</aplicacion>
+            <agencia>00012</agencia>
+            <tipoTransaccion>304100111</tipoTransaccion>
+            <geolocalizacion>0,0</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+            <guid>550e8400e29b41d4a716446655440000</guid>
+            <fechaHora>202603311551000000</fechaHora>
+            <filler>00000000000000000000000000000000000000000000000000</filler>
+            <idioma>es</idioma>
+            <sesion>ASDASD77R01YH</sesion>
+            <ip>127.0.0.1</ip>
+            <idCliente>1711089364</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <!--Optional:-->
+            <documento>
+               <fechaContable>2026-02-05</fechaContable>
+               <numeroDocumento>-553178658</numeroDocumento>
+               <journals>
+                  <journal>
+                     <valor>AUDITORIA-06FEB2026</valor>
+                  </journal>
+               </journals>
+            </documento>
+         </headerIn>
+         <!--Optional:-->
+         <bodyIn>
+            <!--Optional:-->
+            <identificacion>0992464453001</identificacion>
+            <!--Optional:-->
+            <tipoIdentificacion>0003</tipoIdentificacion>
+         </bodyIn>
+      </ser:consultarPrestamosActivos01>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Response
+
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns3="http://bpichincha.com/servicios">
+   <ns2:Header/>
+   <ns2:Body>
+      <ns3:consultarPrestamosActivos01Response>
+         <headerOut>
+            <dispositivo>DEVICE123</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00270</aplicacion>
+            <agencia>00012</agencia>
+            <tipoTransaccion>304100111</tipoTransaccion>
+            <geolocalizacion>0,0</geolocalizacion>
+            <usuario>USINTERT</usuario>
+            <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+            <guid>550e8400e29b41d4a716446655440000</guid>
+            <fechaHora>202603311551000000</fechaHora>
+            <filler>00000000000000000000000000000000000000000000000000</filler>
+            <idioma>es</idioma>
+            <sesion>ASDASD77R01YH</sesion>
+            <ip>127.0.0.1</ip>
+            <idCliente>1711089364</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <documento>
+               <fechaContable>2026-02-05</fechaContable>
+               <numeroDocumento>-553178658</numeroDocumento>
+               <journals>
+                  <journal>
+                     <valor>AUDITORIA-06FEB2026</valor>
+                  </journal>
+               </journals>
+            </documento>
+         </headerOut>
+         <bodyOut>
+            <productos>
+               <credito>
+                  <numeroOperacion>44320637</numeroOperacion>
+                  <producto>PRESTAMO</producto>
+                  <subProducto/>
+                  <descripcionProducto>PRODUCTIVO GAF</descripcionProducto>
+                  <moneda>USD</moneda>
+                  <cuotaPagar>0.0</cuotaPagar>
+                  <fechaPago>20122014</fechaPago>
+                  <estado>VENCIDO</estado>
+                  <numeroProducto/>
+                  <nombreCliente>FONDOS JAHEN TORREALBA INAGAS CHAMBA</nombreCliente>
+                  <fechaVencimiento/>
+                  <deudaActual>41015.71</deudaActual>
+                  <tipoCredito/>
+               </credito>
+            </productos>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tpr-msa-sp-wsclientes0002/consultarPrestamosActivos01</recurso>
+            <componente>tpr-msa-sp-wsclientes0002</componente>
+            <backend>00436</backend>
+         </error>
+      </ns3:consultarPrestamosActivos01Response>
+   </ns2:Body>
+</ns2:Envelope>
+

@@ -1,0 +1,94 @@
+url
+
+https://tnd-msa-sp-wsclientes0024-enp.apps.ocpdev.uiotest.bpichinchatest.test/IntegrationBus/soap/WSClientes0024
+
+Request
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:bp="http://bpichincha.com/servicios">
+    <soapenv:Header/>
+    <soapenv:Body>
+      <bp:ConsultarIdentificacion01>
+        <headerIn>
+          <dispositivo>5CiD3iOF8whuBQEqbct1tlD2mAuclrM=</dispositivo>
+          <empresa>0010</empresa>
+          <canal>02</canal>
+          <medio>020002</medio>
+          <aplicacion>00270</aplicacion>
+          <agencia>00012</agencia>
+          <tipoTransaccion>304100111</tipoTransaccion>
+          <geolocalizacion>6588542</geolocalizacion>
+          <usuario>USINTERT</usuario>
+          <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+          <guid>550e8400e29b41d4a716446655440000</guid>
+          <fechaHora>201608161239203000</fechaHora>
+          <filler>00000000000000000000000000000000000000000000000000</filler>
+          <idioma>es</idioma>
+          <sesion>ASDASD77R01YH</sesion>
+          <ip>192.168.123.111</ip>
+          <idCliente>1711089364</idCliente>
+          <tipoIdCliente>0001</tipoIdCliente>
+          <bancs>
+            <teller>00008002</teller>
+            <terminal>1</terminal>
+            <institucion>0010</institucion>
+            <agencia>0012</agencia>
+            <estacion>1</estacion>
+            <aplicacion/>
+            <canal>0</canal>
+          </bancs>
+        </headerIn>
+        <bodyIn>
+          <!-- Cédula de identidad (0001), RUC (0002) o Pasaporte (0003) -->
+          <identificacion>0602119182</identificacion>
+          <!-- 0001=Cedula | 0002=RUC | 0003=Pasaporte -->
+          <tipoIdentificacion>0001</tipoIdentificacion>
+        </bodyIn>
+      </bp:ConsultarIdentificacion01>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+Response
+
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:ConsultarIdentificacion01Response xmlns:ns2="http://bpichincha.com/servicios">
+      <headerOut>
+        <dispositivo>5CiD3iOF8whuBQEqbct1tlD2mAuclrM=</dispositivo>
+        <empresa>0010</empresa>
+        <canal>02</canal>
+        <medio>020002</medio>
+        <aplicacion>00270</aplicacion>
+        <agencia>00012</agencia>
+        <tipoTransaccion>304100111</tipoTransaccion>
+        <usuario>USINTERT</usuario>
+        <guid>550e8400e29b41d4a716446655440000</guid>
+        <fechaHora>201608161239203000</fechaHora>
+        <sesion>ASDASD77R01YH</sesion>
+        <documento>
+          <fechaContable>20260320</fechaContable>
+          <numeroDocumento>000000001</numeroDocumento>
+        </documento>
+      </headerOut>
+      <bodyOut>
+        <CIF>3860119</CIF>
+        <identificacion>0602119182</identificacion>
+        <tipoIdentificacion>0001</tipoIdentificacion>
+        <nombre>CAISATASIG TORANZO DE CARCHIPULLA</nombre>
+        <direccion>Amazonas 4545, Pereira,</direccion>
+        <tipoCliente>01</tipoCliente>
+        <estado>000</estado>
+      </bodyOut>
+      <error>
+        <codigo>0</codigo>
+        <mensaje>OK</mensaje>
+        <mensajeNegocio>Consulta exitosa</mensajeNegocio>
+        <tipo>INFO</tipo>
+        <recurso>WSClientes0024/ConsultarIdentificacion01</recurso>
+        <componente>ConsultarIdentificacion01</componente>
+        <backend>00000</backend>
+      </error>
+    </ns2:ConsultarIdentificacion01Response>
+  </S:Body>
+</S:Envelope>
