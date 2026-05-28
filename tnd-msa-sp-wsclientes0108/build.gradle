@@ -203,7 +203,7 @@ tasks.register('generateJavaFromWsdl') {
                 args = cxfArgs
             }
             if (javaExecResult.exitValue != 0) {
-                throw new RuntimeException("Error generando clases desde ${wsdlFile.name}")
+                throw new GradleException("Error generando clases desde ${wsdlFile.name}")
             }
         }
     }
@@ -230,8 +230,7 @@ tasks.register('postProcessGeneratedWsdl') {
         }
 
         // Ejecución directa sin reflexión
-        def shellClass = Class.forName('groovy.lang.GroovyShell')
-        def shell = shellClass.getDeclaredConstructor().newInstance()
+        def shell = new GroovyShell()
         def script = shell.parse(postProcessScript)
         script.binding.setVariable('args', [generatedPackageDir.absolutePath] as String[])
         script.run()
