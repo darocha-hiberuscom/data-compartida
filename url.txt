@@ -16,3 +16,7 @@ https://teams.microsoft.com/l/meetingrecap?driveId=b%21iXLmhGbxLEG66-9lUaNi7aIO6
 
 
 https://console-openshift-console.apps.ocpdev.uiotest.bpichinchatest.test/k8s/ns/arq-adaptadores/pods/deployment-tnd-msa-ad-bnc-customers-profile-56c6886b84-68nv8/logs
+
+
+
+https://console-openshift-console.apps.ocpdev.uiotest.bpichinchatest.test/k8s/ns/tnd-middleware/pods/deployment-tnd-msa-sp-wsclientes0038-59ff67b777-qjc9k/logs
