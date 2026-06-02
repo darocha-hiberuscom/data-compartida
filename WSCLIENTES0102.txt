@@ -1,0 +1,124 @@
+
+URL
+
+http://tnd-msa-sp-wsclientes0102.apps.ocpdev.uiotest.bpichinchatest.test
+
+Entrada
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+     <ser:SegmentacionEntradaFija01 xmlns:NS1="http://bpichincha.com/servicios">
+        <headerIn>
+            <dispositivo>444324657433406</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010004</medio>
+            <aplicacion>00650</aplicacion>
+            <agencia>38</agencia>
+            <tipoTransaccion>201010201</tipoTransaccion>
+            <geolocalizacion></geolocalizacion>
+            <usuario>jlozada</usuario>
+            <unicidad></unicidad>
+            <guid>4fa98da8cf6d47aea37712fca5ffc0bf</guid>
+            <fechaHora>202601091326120500</fechaHora>
+            <filler></filler>
+            <idioma>es-EC</idioma>
+            <sesion>6f788163-ef38-4118-9017-bf7776ee872d</sesion>
+            <ip>20.101.214.10</ip>
+            <idCliente></idCliente>
+            <tipoIdCliente></tipoIdCliente>
+            <bancs>
+                <teller>00003666</teller>
+                <terminal>1</terminal>
+                <institucion>0010</institucion>
+                <agencia>0330</agencia>
+                <estacion>1</estacion>
+                <aplicacion></aplicacion>
+                <canal></canal>
+            </bancs>
+        </headerIn>
+        <bodyIn>
+            <segmentacion>
+                <usuario>JXXXXXX</usuario> Nota: El valor no está enmascarado, ciertos caracteres se reemplazan por X para mantener confidencialidad.
+                <empresa>0010</empresa>
+                <centro>8334</centro>
+                <codPersona>0</codPersona>
+                <numIdentificacion>1755319XXX</numIdentificacion> Nota: El valor no está enmascarado, ciertos caracteres se reemplazan por X para mantener confidencialidad.
+                <tipIdentificacion>1</tipIdentificacion>
+                <codSexo>0</codSexo>
+                <indVivienda>1</indVivienda>
+                <codEstadoCivil>7</codEstadoCivil>
+                <codNivelEstudios>20</codNivelEstudios>
+                <indSitAct>3</indSitAct>
+                <mntIngresos>0.00</mntIngresos>
+                <fecNacimiento>17-12-1995</fecNacimiento>
+                <numCargas>0</numCargas>
+                <codSecBCE></codSecBCE>
+                <codSecEcon>0</codSecEcon>
+                <codActEcon>0</codActEcon>
+                <mntVentas>0</mntVentas>
+            </segmentacion>
+        </bodyIn>
+    </ser:SegmentacionEntradaFija01> 
+   </soapenv:Body>
+
+
+Salida
+    <NS2:SegmentacionEntradaFija01Response xmlns:NS2="http://bpichincha.com/servicios">
+        <headerOut>
+            <dispositivo>444324657433406</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010004</medio>
+            <aplicacion>00650</aplicacion>
+            <agencia>38</agencia>
+            <tipoTransaccion>201010201</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>jlozada</usuario>
+            <unicidad/>
+            <guid>4fa98da8cf6d47aea37712fca5ffc0bf</guid>
+            <fechaHora>202601091326120500</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>6f788163-ef38-4118-9017-bf7776ee872d</sesion>
+            <ip>20.101.214.10</ip>
+            <idCliente/>
+            <tipoIdCliente/>
+            <bancs>
+                <teller>00003666</teller>
+                <terminal>1</terminal>
+                <institucion>0010</institucion>
+                <agencia>0330</agencia>
+                <estacion>1</estacion>
+                <aplicacion/>
+                <canal/>
+            </bancs>
+            <documento>
+                <fechaContable/>
+                <numeroDocumento/>
+                <journals>
+                    <journal>
+                        <valor/>
+                    </journal>
+                </journals>
+            </documento>
+        </headerOut>
+        <bodyOut>
+            <codSegmento>11</codSegmento>
+            <desSegmento>PERSONAS</desSegmento>
+            <codSubSegmento>44</codSubSegmento>
+            <desSubSegmento>CONSUMO</desSubSegmento>
+            <codEmpresa2>0010</codEmpresa2>
+        </bodyOut>
+        <error>
+            <codigo>0</codigo>
+            <mensaje>OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>tnd-msa-sp-wsclientes0102/SegmentacionEntradaFija01</recurso>
+            <componente>SegmentacionEntradaFija01</componente>
+            <backend>00638</backend>
+        </error>
+    </NS2:SegmentacionEntradaFija01Response>
+ 
