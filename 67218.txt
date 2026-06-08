@@ -17,3 +17,7 @@ https://tnd-msa-ad-bnc-customers-reference-enp.apps.ocpdev.uiotest.bpichinchates
   	"custRef": "4"	
   }
 }
+
+
+
+https://dev.azure.com/BancoPichinchaEC/tpl-middleware/_git/tpr-msa-sp-wsproductos0024/pullrequest/385744
