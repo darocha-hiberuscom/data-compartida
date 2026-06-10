@@ -20,3 +20,158 @@ https://console-openshift-console.apps.ocpdev.uiotest.bpichinchatest.test/k8s/ns
 
 
 https://console-openshift-console.apps.ocpdev.uiotest.bpichinchatest.test/k8s/ns/tnd-middleware/pods/deployment-tnd-msa-sp-wsclientes0038-59ff67b777-qjc9k/logs
+
+
+
+
+
+
+
+
+
+http://10.60.128.86:3001/IntegrationBus/soap/ORQClientes0003
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarProductosActivos01>
+         <headerIn>
+            <dispositivo>01010101010101010101010101010101</dispositivo>
+            <empresa>0010</empresa>
+            <canal>03</canal>
+            <medio>030006</medio>
+            <aplicacion>00663</aplicacion>
+            <agencia/>
+            <tipoTransaccion>301000301</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+            <guid>MONITOREO-FBUS</guid>
+            <fechaHora>202210201505651262</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>ASDASD77R01YH</sesion>
+            <ip>10.192.168.45</ip>
+            <idCliente>0</idCliente>
+            <tipoIdCliente></tipoIdCliente>
+            <!--<bancs>
+               <teller>00008002</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>0012</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>-->
+         </headerIn>
+         <bodyIn>
+            <cif/>
+            <identificacion>0603975863</identificacion>
+            <tipoIdentificacion>0001</tipoIdentificacion>
+            <tipoProducto>T</tipoProducto>
+            <flujo>
+               <estado>iniciar</estado>
+               <campos>
+                  <campo>
+                     <clave/>
+                     <valor/>
+                  </campo>
+               </campos>
+            </flujo>
+         </bodyIn>
+      </ser:ConsultarProductosActivos01>
+   </soapenv:Body>
+</soapenv:Envelope>
+ 
+
+
+
+
+<NS1:Envelope xmlns:NS1="http://schemas.xmlsoap.org/soap/envelope/">
+   <NS1:Body>
+      <NS2:ConsultarProductosActivos01Response xmlns:NS2="http://bpichincha.com/servicios">
+         <headerOut>
+            <dispositivo>01010101010101010101010101010101</dispositivo>
+            <empresa>0010</empresa>
+            <canal>03</canal>
+            <medio>030006</medio>
+            <aplicacion>00663</aplicacion>
+            <agencia/>
+            <tipoTransaccion>301000301</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad>UZhDOa2GXtkAK2/QovFagnnS+nQSGAF/SKyTIIv1axc=</unicidad>
+            <guid>MONITOREO-FBUS</guid>
+            <fechaHora>202210201505651262</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>ASDASD77R01YH</sesion>
+            <ip>10.192.168.45</ip>
+            <idCliente>0</idCliente>
+            <tipoIdCliente/>
+            <bancs>
+               <teller>00008002</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>0012</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+            <documento>
+               <fechaContable/>
+               <numeroDocumento/>
+               <journals>
+                  <journal>
+                     <valor/>
+                  </journal>
+               </journals>
+            </documento>
+         </headerOut>
+         <bodyOut>
+            <productos>
+               <ahorros>
+                  <ahorro>
+                     <cuenta>2204001607</cuenta>
+                     <cuentaHash>433963306a6b6c72714a664365396a663563483544784f6e527366303931726d316e59417a4863637241673d</cuentaHash>
+                     <cuentaMask>220400XXXX</cuentaMask>
+                     <producto>2232</producto>
+                     <subProducto>0003</subProducto>
+                     <permiteConfigurar>false</permiteConfigurar>
+                     <permiteTransaccionar>false</permiteTransaccionar>
+                     <firmaIndependiente>true</firmaIndependiente>
+                     <permiteActivar>false</permiteActivar>
+                     <alias/>
+                     <principal>false</principal>
+                     <tipo>Cuenta de AhorroTransaccional</tipo>
+                     <moneda>USD</moneda>
+                     <saldoDisponible>217392.11</saldoDisponible>
+                     <saldoContable>217392.11</saldoContable>
+                     <estadoFavorito>0</estadoFavorito>
+                  </ahorro>
+               </ahorros>
+            </productos>
+            <flujo>
+               <estado>finalizar</estado>
+               <campos>
+                  <campo>
+                     <clave/>
+                     <valor/>
+                  </campo>
+               </campos>
+            </flujo>
+         </bodyOut>
+         <error>
+            <codigo>0</codigo>
+            <mensaje>TCSBRKR2_BP:ORQClientes0003:3001-OK</mensaje>
+            <mensajeNegocio/>
+            <tipo>INFO</tipo>
+            <recurso>ORQClientes0003/ConsultarProductosActivos01</recurso>
+            <componente>ConsultarProductosActivos01</componente>
+            <backend>00638</backend>
+         </error>
+      </NS2:ConsultarProductosActivos01Response>
+   </NS1:Body>
+</NS1:Envelope>
+ 
