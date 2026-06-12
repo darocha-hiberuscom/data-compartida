@@ -53,3 +53,166 @@ curl --location
    }
 }
 }'
+
+https://ays-msa-dm-wsclientes0220-enp.apps.ocptest.uiotest.bpichinchatest.test/api/v1/Tarjetas/ConsultarTarjetas01
+
+
+{
+        "headerIn": {
+          "dispositivo": "01010101010101010101010101010101",
+          "empresa": "0010",
+          "canal": "02",
+          "medio": "020007",
+          "aplicacion": "00669",
+          "agencia": "197",
+          "tipoTransaccion": "202026101",
+          "geolocalizacion": "",
+          "usuario": "USINTERT",
+          "ip": "10.0.94.126",
+          "requestIp": "",
+          "fechaHora": "202104151505451252",
+          "sesion": "ASDASD77R01YH",
+          "unicidad": "",
+          "guid": "3F2504E04F8911D39A0C0305E82C3302",
+          "filler": "",
+          "idioma": "es-EC",
+          "idCliente": "0908020753",
+          "tipoIdCliente": "0001",
+          "bancs": null
+        },
+        "bodyIn": {
+          "ordenante": {
+            "codigoPortal": "P",
+            "identificacion": "1720166329"
+          },
+          "atributos": {
+            "aplicacionID": "PICH-001",
+            "canalID": "IN",
+            "uuid": "",
+            "ip": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+            "horaTransaccion": "2018-11-09 10:10:49",
+            "nivelTrace": "DEBUG",
+            "nombreServicio": "",
+            "cantRegistros": "100",
+            "numTotalPag": "1",
+            "numPagActual": "1"
+          }
+        }
+    }
+
+{
+  "headerOut": {
+    "dispositivo": "01010101010101010101010101010101",
+    "empresa": "0010",
+    "canal": "02",
+    "medio": "020007",
+    "aplicacion": "00669",
+    "agencia": "197",
+    "tipoTransaccion": "202026101",
+    "geolocalizacion": "",
+    "usuario": "USINTERT",
+    "unicidad": "",
+    "guid": "3F2504E04F8911D39A0C0305E82C3302",
+    "fechaHora": "202104151505451252",
+    "filler": "",
+    "idioma": "es-EC",
+    "sesion": "ASDASD77R01YH",
+    "ip": "10.0.94.126",
+    "requestIp": "",
+    "idCliente": "0908020753",
+    "tipoIdCliente": "0001"
+  },
+  "bodyOut": {
+    "datosTarjeta": [
+      {
+        "tipoEmisor": "D",
+        "emisor": "Diners",
+        "tipoTarjeta": "DINERS UNICEF INT. PERS.",
+        "numeroTarjeta": "36021821100082",
+        "fechaProximoPago": "18032036",
+        "totalPagarFecha": "361.47",
+        "minimoPagar": "361.47",
+        "saldoTarjeta": "361.47",
+        "llaveSimetrica": "mLobTzeaGIQKWRjBiETSvkqigoRB9Aek23r64CkRORTNXlsJm1vXSk5osttMif8ojeji/BxuSnN0x5cJw/85wv6V+cTW1e/p0DQnsTSPoEjFMXWYqVflG4vgLP5gbmCNiuJSrZPiZ8p+mlcB/84krsF/reB30hK2vAJPiYBh81T5LQQPhq6v54IBL8ZgJa1gqUV3lp8q5nwPj7Mx76eu9Oq3C7VqAWj6zXg1lEu5H54+OKNo+BUzpL+oQVYr2Hy+l4qnNAVoyvxPPMyFP3Bhbg9jGSZ1LZY7Czg5y6kDIGjGOF26tjYwGGyu4kPanSc6l6Ea1LM1AeAwjdcFxH2K9g==",
+        "numeroCuenta": "xjjwpoCDYAjp7yQ0pqjJww==",
+        "numeroTarjetaEncriptada": "M4yqLuysTpTHQG0uTnLmeA==",
+        "codigoPortal": null,
+        "entidad": "DC",
+        "marca": "DN"
+      },
+      {
+        "tipoEmisor": "D",
+        "emisor": "Diners",
+        "tipoTarjeta": "DINERS UNICEF INT. PERS.",
+        "numeroTarjeta": "36021821100082",
+        "fechaProximoPago": "18032036",
+        "totalPagarFecha": "0.00",
+        "minimoPagar": "0.00",
+        "saldoTarjeta": "0.00",
+        "llaveSimetrica": "mLobTzeaGIQKWRjBiETSvkqigoRB9Aek23r64CkRORTNXlsJm1vXSk5osttMif8ojeji/BxuSnN0x5cJw/85wv6V+cTW1e/p0DQnsTSPoEjFMXWYqVflG4vgLP5gbmCNiuJSrZPiZ8p+mlcB/84krsF/reB30hK2vAJPiYBh81T5LQQPhq6v54IBL8ZgJa1gqUV3lp8q5nwPj7Mx76eu9Oq3C7VqAWj6zXg1lEu5H54+OKNo+BUzpL+oQVYr2Hy+l4qnNAVoyvxPPMyFP3Bhbg9jGSZ1LZY7Czg5y6kDIGjGOF26tjYwGGyu4kPanSc6l6Ea1LM1AeAwjdcFxH2K9g==",
+        "numeroCuenta": "xjjwpoCDYAjp7yQ0pqjJww==",
+        "numeroTarjetaEncriptada": "M4yqLuysTpTHQG0uTnLmeA==",
+        "codigoPortal": null,
+        "entidad": "DC",
+        "marca": "DN"
+      },
+      {
+        "tipoEmisor": "V",
+        "emisor": "Visa",
+        "tipoTarjeta": "VISA JOVEN",
+        "numeroTarjeta": "4768610000000083",
+        "fechaProximoPago": "0",
+        "totalPagarFecha": "0.00",
+        "minimoPagar": "0.00",
+        "saldoTarjeta": "0.00",
+        "llaveSimetrica": "mLobTzeaGIQKWRjBiETSvkqigoRB9Aek23r64CkRORTNXlsJm1vXSk5osttMif8ojeji/BxuSnN0x5cJw/85wv6V+cTW1e/p0DQnsTSPoEjFMXWYqVflG4vgLP5gbmCNiuJSrZPiZ8p+mlcB/84krsF/reB30hK2vAJPiYBh81T5LQQPhq6v54IBL8ZgJa1gqUV3lp8q5nwPj7Mx76eu9Oq3C7VqAWj6zXg1lEu5H54+OKNo+BUzpL+oQVYr2Hy+l4qnNAVoyvxPPMyFP3Bhbg9jGSZ1LZY7Czg5y6kDIGjGOF26tjYwGGyu4kPanSc6l6Ea1LM1AeAwjdcFxH2K9g==",
+        "numeroCuenta": "RvDt8Ucxey5wdFP+pnGdzaUgHdxzQB34ZU/WnsdI5q4=",
+        "numeroTarjetaEncriptada": "RvDt8Ucxey5wdFP+pnGdzaUgHdxzQB34ZU/WnsdI5q4=",
+        "codigoPortal": "PPI",
+        "entidad": "PI",
+        "marca": "VI"
+      },
+      {
+        "tipoEmisor": "M",
+        "emisor": "MasterCard",
+        "tipoTarjeta": "MASTERCARD JOVEN",
+        "numeroTarjeta": "2230670000000081",
+        "fechaProximoPago": "0",
+        "totalPagarFecha": "0.00",
+        "minimoPagar": "0.00",
+        "saldoTarjeta": "0.00",
+        "llaveSimetrica": "mLobTzeaGIQKWRjBiETSvkqigoRB9Aek23r64CkRORTNXlsJm1vXSk5osttMif8ojeji/BxuSnN0x5cJw/85wv6V+cTW1e/p0DQnsTSPoEjFMXWYqVflG4vgLP5gbmCNiuJSrZPiZ8p+mlcB/84krsF/reB30hK2vAJPiYBh81T5LQQPhq6v54IBL8ZgJa1gqUV3lp8q5nwPj7Mx76eu9Oq3C7VqAWj6zXg1lEu5H54+OKNo+BUzpL+oQVYr2Hy+l4qnNAVoyvxPPMyFP3Bhbg9jGSZ1LZY7Czg5y6kDIGjGOF26tjYwGGyu4kPanSc6l6Ea1LM1AeAwjdcFxH2K9g==",
+        "numeroCuenta": "KMh5c9MA38qvfOSxjkqQhKUgHdxzQB34ZU/WnsdI5q4=",
+        "numeroTarjetaEncriptada": "KMh5c9MA38qvfOSxjkqQhKUgHdxzQB34ZU/WnsdI5q4=",
+        "codigoPortal": "PPI",
+        "entidad": "PI",
+        "marca": "MC"
+      },
+      {
+        "tipoEmisor": "M",
+        "emisor": "MasterCard",
+        "tipoTarjeta": "MC BLACK LATAM PASS",
+        "numeroTarjeta": "5466054653945769",
+        "fechaProximoPago": "18092037",
+        "totalPagarFecha": "-170035.58",
+        "minimoPagar": "0.00",
+        "saldoTarjeta": "-170035.58",
+        "llaveSimetrica": "mLobTzeaGIQKWRjBiETSvkqigoRB9Aek23r64CkRORTNXlsJm1vXSk5osttMif8ojeji/BxuSnN0x5cJw/85wv6V+cTW1e/p0DQnsTSPoEjFMXWYqVflG4vgLP5gbmCNiuJSrZPiZ8p+mlcB/84krsF/reB30hK2vAJPiYBh81T5LQQPhq6v54IBL8ZgJa1gqUV3lp8q5nwPj7Mx76eu9Oq3C7VqAWj6zXg1lEu5H54+OKNo+BUzpL+oQVYr2Hy+l4qnNAVoyvxPPMyFP3Bhbg9jGSZ1LZY7Czg5y6kDIGjGOF26tjYwGGyu4kPanSc6l6Ea1LM1AeAwjdcFxH2K9g==",
+        "numeroCuenta": "zI/DRMYyyAzuWlVS2CTIgKUgHdxzQB34ZU/WnsdI5q4=",
+        "numeroTarjetaEncriptada": "zI/DRMYyyAzuWlVS2CTIgKUgHdxzQB34ZU/WnsdI5q4=",
+        "codigoPortal": "PPI",
+        "entidad": "PI",
+        "marca": "MC"
+      }
+    ]
+  },
+  "error": {
+    "codigo": "0",
+    "mensaje": "OK",
+    "mensajeNegocio": "",
+    "tipo": "INFO",
+    "recurso": "WSClientes0220/ConsultarTarjetas01",
+    "componente": "ConsultarTarjetas01",
+    "backend": "00674"
+  }
+}
