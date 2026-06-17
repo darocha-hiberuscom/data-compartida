@@ -229,4 +229,281 @@ curl --request POST \
       </ser:ConsultarIdentificacion01>
    </soapenv:Body>
 </soapenv:Envelope>'
+
+
+
+
+<soapenv:Envelope xmlns:ser="http://bpichincha.com/servicios" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:date="http://exslt.org/dates-and-times" xmlns:regexp="http://exslt.org/regular-expressions" xmlns:exsl="http://exslt.org/common" xmlns:ns2="http://bpichincha.com/servicios" xmlns:tns="http://www.example.org/tns" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <NS1:CreacionCliente21 xmlns:NS1="http://bpichincha.com/servicios">
+         <headerIn>
+            <dispositivo>[B@1d28d53</dispositivo>
+            <empresa>0010</empresa>
+            <canal>01</canal>
+            <medio>010003</medio>
+            <aplicacion>00662</aplicacion>
+            <agencia>12</agencia>
+            <tipoTransaccion>302006201</tipoTransaccion>
+            <geolocalizacion>0000</geolocalizacion>
+            <usuario>MAARMAS</usuario>
+            <unicidad/>
+            <guid>4cafceb1-6a27-4825-a197-d8ccbbbf81cL</guid>
+            <fechaHora>202207011321230109</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>dbf43b56-cf65-4873-9868-bf3e8fce9ef1</sesion>
+            <ip>10.23.112.108</ip>
+            <idCliente/>
+            <tipoIdCliente/>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>0001</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+         </headerIn>
+         <bodyIn>
+            <flujo>
+               <estado>iniciar</estado>
+               <campos>
+                  <campo>
+                     <clave/>
+                     <valor/>
+                  </campo>
+               </campos>
+            </flujo>
+            <identificacion>
+               <identificacion>0603595055</identificacion>
+               <tipoIdentificacion>0001</tipoIdentificacion>
+               <primerApellido>LoPEZ</primerApellido>
+               <segundoApellido>GAVILANES</segundoApellido>
+               <primerNombre>EDUARDO</primerNombre>
+               <segundoNombre>ESTUARDO</segundoNombre>
+               <tercerNombre>ALVADOR</tercerNombre>
+               <nacionalidad>EC</nacionalidad>
+               <otraNacionalidad>N</otraNacionalidad>
+               <paisEmisionPasaporte/>
+               <fechaExpiracionPasaporte/>
+               <fechaInicioResidencia/>
+               <tipoVisa/>
+               <fechaExpiracionVisa/>
+               <numeroCertificadoEmpadronamiento/>
+               <fechaExpEmpadronamiento/>
+               <clienteObligadoContabilidad>N</clienteObligadoContabilidad>
+               <tipoIdAdicional/>
+               <numeroIdAdicional/>
+               <tipoIdAdicional2>0003</tipoIdAdicional2>
+               <numeroIdAdicional2>0999719150001</numeroIdAdicional2>
+            </identificacion>
+            <demograficos>
+               <fechaNacimiento>01/07/1995</fechaNacimiento>
+               <estadoCivil>2</estadoCivil>
+               <genero>1</genero>
+               <nivelInstruccion>5000</nivelInstruccion>
+               <codigoPaisNacimiento>EC</codigoPaisNacimiento>
+               <codigoProvinciaNacimiento>02</codigoProvinciaNacimiento>
+               <codigoCiudadNacimiento>0760</codigoCiudadNacimiento>
+               <separacionBienes/>
+               <profesion>5010</profesion>
+               <tipoVivienda>2</tipoVivienda>
+               <cargasFamiliares>99</cargasFamiliares>
+               <edad>27</edad>
+            </demograficos>
+            <actividadEconomica>
+               <situacionLaboral>
+                  <detalleSituacionLaboral>
+                     <situacionLaboral>0</situacionLaboral>
+                     <sectorEconomicoPrincipal>30000</sectorEconomicoPrincipal>
+                     <actividadEconomicaPrincipal>30942</actividadEconomicaPrincipal>
+                  </detalleSituacionLaboral>
+                  <detalleSituacionLaboral>
+                     <situacionLaboral>1</situacionLaboral>
+                     <sectorEconomicoPrincipal>000</sectorEconomicoPrincipal>
+                     <actividadEconomicaPrincipal>11121</actividadEconomicaPrincipal>
+                  </detalleSituacionLaboral>
+               </situacionLaboral>
+               <obligacionesTributariasExterior>S</obligacionesTributariasExterior>
+               <paisObligacionesTributariasExterior>US</paisObligacionesTributariasExterior>
+               <tinObligacionesTributariasExterior>D1345Bc</tinObligacionesTributariasExterior>
+               <representanteLegalDireccionEEUU>S</representanteLegalDireccionEEUU>
+               <tipoTrabajo>3</tipoTrabajo>
+               <nombreEmpresaTrabajo>cliente nuevo</nombreEmpresaTrabajo>
+               <modalidadDependencia>PH</modalidadDependencia>
+               <cargoTrabajo>Jefe de rea/ # 2</cargoTrabajo>
+               <fechaIngresoTrabajo>01/07/2004</fechaIngresoTrabajo>
+               <nombreNegocio>Prueba envo a Bancs cliente nuevo</nombreNegocio>
+               <fechaInicioActividad>01/07/2012</fechaInicioActividad>
+               <cantidadEmpleados>0</cantidadEmpleados>
+               <cantidadOficinasSucursales>0</cantidadOficinasSucursales>
+               <situacionLaboralNoTrabaja>
+                  <detalleSituacionLaboralNoTrabaja>
+                     <detalle/>
+                  </detalleSituacionLaboralNoTrabaja>
+               </situacionLaboralNoTrabaja>
+            </actividadEconomica>
+            <sfi>
+               <flagGuardarSFI>false</flagGuardarSFI>
+               <situacionLaboralSFI>0</situacionLaboralSFI>
+               <ejecutivo/>
+               <tipoInterviniente>01</tipoInterviniente>
+               <relacionDeudorGarante/>
+               <esSeparado/>
+               <anosResidencia/>
+               <localPropio/>
+               <cuentaConServicioAguaPotable/>
+               <cuentaConServicioElectricidad/>
+               <nombreDuenoVivienda/>
+               <administradorNegocio/>
+               <parentescoAdministradorNegocio/>
+            </sfi>
+            <localizacion>
+               <listaDirecciones>
+                  <direccion>
+                     <tipoDireccion>01</tipoDireccion>
+                     <identificador>A</identificador>
+                     <callePrincipal>Av. Siempre Viva # 2</callePrincipal>
+                     <calleSecundaria>Calle and</calleSecundaria>
+                     <pais>EC</pais>
+                     <provincia>02</provincia>
+                     <ciudad>0185</ciudad>
+                     <canton>0204</canton>
+                     <parroquia>020450</parroquia>
+                     <latitud>0+</latitud>
+                     <longitud>0+</longitud>
+                     <informacionAdicional>El camino del sol LA FLORESTA</informacionAdicional>
+                     <zona/>
+                     <correspondencia>Si</correspondencia>
+                     <telefono>593037415255</telefono>
+                     <barrio>20450010</barrio>
+                  </direccion>
+                  <direccion>
+                     <tipoDireccion>03</tipoDireccion>
+                     <identificador>B</identificador>
+                     <callePrincipal>Av. Siempre Viva # 2</callePrincipal>
+                     <calleSecundaria>Calle and</calleSecundaria>
+                     <pais>EC</pais>
+                     <provincia>02</provincia>
+                     <ciudad>0185</ciudad>
+                     <canton>0204</canton>
+                     <parroquia>020450</parroquia>
+                     <latitud>0+</latitud>
+                     <longitud>0+</longitud>
+                     <informacionAdicional>El camino del sol LA FLORESTA</informacionAdicional>
+                     <zona/>
+                     <correspondencia>No</correspondencia>
+                     <telefono>593037415255</telefono>
+                     <barrio>20450010</barrio>
+                  </direccion>
+                  <direccion>
+                     <tipoDireccion>04</tipoDireccion>
+                     <identificador>C</identificador>
+                     <callePrincipal>Prueba direccin adicional 1</callePrincipal>
+                     <calleSecundaria>Adicional 2</calleSecundaria>
+                     <pais>EC</pais>
+                     <provincia>06</provincia>
+                     <ciudad>0229</ciudad>
+                     <canton>0603</canton>
+                     <parroquia>060301</parroquia>
+                     <latitud>0</latitud>
+                     <longitud>0</longitud>
+                     <informacionAdicional>Parque Central  SAN PEDRO DE GUISEL</informacionAdicional>
+                     <zona/>
+                     <correspondencia>1</correspondencia>
+                     <telefono>593032974125</telefono>
+                     <barrio>60301004</barrio>
+                  </direccion>
+               </listaDirecciones>
+               <direccionesCelular>
+                  <direccionCelular>
+                     <numeroCelular>5930922222222</numeroCelular>
+                     <operacion>M</operacion>
+                     <identificador>1</identificador>
+                  </direccionCelular>
+               </direccionesCelular>
+               <direccionesCorreoElectronico>
+                  <direccionCorreoElectronico>
+                     <direccionMail>Prueba@ney.com</direccionMail>
+                     <operacion>M</operacion>
+                     <identificador>1</identificador>
+                  </direccionCorreoElectronico>
+               </direccionesCorreoElectronico>
+            </localizacion>
+            <extra>
+               <operacion>03</operacion>
+               <tipoClienteProspecto>03</tipoClienteProspecto>
+               <motivoCreacionCliente>10</motivoCreacionCliente>
+               <informacionLog>'PORTAL_CreacionIdentificacionSIMAGrupal','PORTAL_CreacionDemograficosSIMAGrupal','PORTAL_CreacionActividadEconomicaSIMAGrupal','PORTAL_CreacionLocalizacionSIMAGrupal','PORTAL_CreacionDatosEconomicosSIMAGrupal','PORTAL_CreacionReferenciasSIMAGrupal','PORTAL_CreacionComplementariaSIMAGrupal'</informacionLog>
+               <tipoClienteLog>C</tipoClienteLog>
+               <operacionLog>0001</operacionLog>
+               <riesgoDomestico>ZZ</riesgoDomestico>
+               <cupoRiesgo>ZZ</cupoRiesgo>
+               <tfn>0</tfn>
+               <excentoImpuestos>3</excentoImpuestos>
+               <documentosVerificados>2</documentosVerificados>
+               <formulariog324>N</formulariog324>
+            </extra>
+            <datosEconomicos>
+               <sueldo>333.25</sueldo>
+               <ingresosVariables>12.63</ingresosVariables>
+               <ventasMensuales>2612</ventasMensuales>
+               <otrosIngresos>25.97</otrosIngresos>
+               <detalleOtrosIngresos>Prueba otros ingrexos</detalleOtrosIngresos>
+               <fechaInicioIngresos/>
+               <ingresosMensualesConyugue>0</ingresosMensualesConyugue>
+               <gastosFamiliares>690.95</gastosFamiliares>
+               <gastosArriendo>0</gastosArriendo>
+               <costoVentas>720</costoVentas>
+               <gastosGenerales>108.55</gastosGenerales>
+               <otrosEgresos>270.15</otrosEgresos>
+               <detalleOtrosEgresos>PAGO CUOTAS SISTEMA FINANCIERO</detalleOtrosEgresos>
+               <totalActivos>56463.88</totalActivos>
+               <activosProductivos>0</activosProductivos>
+               <fechaDatosFinancieros>30/06/2022</fechaDatosFinancieros>
+               <totalPasivos>10039.06</totalPasivos>
+               <totalPatrimonio>46424.82</totalPatrimonio>
+               <fechaPatrimonio>30/06/2022</fechaPatrimonio>
+            </datosEconomicos>
+            <referencias>
+               <listaReferencias>
+                  <referencia>
+                     <tipoReferencia>4</tipoReferencia>
+                     <nombreCompleto>Hector gomez</nombreCompleto>
+                     <parentesco>Mama</parentesco>
+                     <pais>EC</pais>
+                     <provincia>05</provincia>
+                     <ciudad>0100</ciudad>
+                     <telefono>593032971258</telefono>
+                     <celular>5930985238888</celular>
+                     <direccion>Latitudes</direccion>
+                     <instancia>1</instancia>
+                     <estado>00</estado>
+                  </referencia>
+                  <referencia>
+                     <tipoReferencia>5</tipoReferencia>
+                     <nombreCompleto>Pepe Soto</nombreCompleto>
+                     <parentesco>Comadre</parentesco>
+                     <pais>EC</pais>
+                     <provincia>05</provincia>
+                     <ciudad>0110</ciudad>
+                     <telefono>593032974158</telefono>
+                     <celular>5930963258800</celular>
+                     <direccion>Cotopaxi</direccion>
+                     <instancia>1</instancia>
+                     <estado>00</estado>
+                  </referencia>
+               </listaReferencias>
+            </referencias>
+            <complementaria>
+               <politicoExpuesto>2</politicoExpuesto>
+               <dirigentePolitico>1</dirigentePolitico>
+               <propositoRelacion>3</propositoRelacion>
+            </complementaria>
+         </bodyIn>
+      </NS1:CreacionCliente21>
+   </soapenv:Body>
+</soapenv:Envelope>
  
