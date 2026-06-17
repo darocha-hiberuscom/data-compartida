@@ -29,6 +29,8 @@ https://console-openshift-console.apps.ocpdev.uiotest.bpichinchatest.test/k8s/ns
 
 
 
+
+
 http://10.60.128.86:3001/IntegrationBus/soap/ORQClientes0003
 
 
@@ -174,4 +176,57 @@ http://10.60.128.86:3001/IntegrationBus/soap/ORQClientes0003
       </NS2:ConsultarProductosActivos01Response>
    </NS1:Body>
 </NS1:Envelope>
+
+
+
+
+
+
+
+
+curl --request POST \
+  --url https://tnd-msa-sp-wsclientes0024-enp.apps.ocptest.uiotest.bpichinchatest.test/IntegrationBus/soap/WSClientes0024 \
+  --header 'Content-Type: application/xml' \
+  --header 'User-Agent: insomnia/11.1.0' \
+  --cookie 'dtCookiewh95kubn=v_4_srv_2_sn_5E1C3C3FB68A254150B3230CDAA52468_perc_100000_ol_0_mul_1_app-3Aea7c4b59f27d43eb_1_rcs-3Acss_0; daf5633e6879dc63ef5bb49bd23b5a6f=bf332eb2951d018992b6c726b9987c2f' \
+  --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://bpichincha.com/servicios">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarIdentificacion01>
+         <headerIn>
+            <dispositivo>2mE7PFS4fo/gQKN/xCsU1js0wdXh/SoH2gyI3t7YIdc=</dispositivo>
+            <empresa>0010</empresa>
+            <canal>02</canal>
+            <medio>020002</medio>
+            <aplicacion>00647</aplicacion>
+            <agencia/>
+            <tipoTransaccion>201002401</tipoTransaccion>
+            <geolocalizacion/>
+            <usuario>USINTERT</usuario>
+            <unicidad/>
+            <guid>5be0e47340c34b3f820fc07860c4e191</guid>
+            <fechaHora>201905131054230359</fechaHora>
+            <filler/>
+            <idioma>es-EC</idioma>
+            <sesion>dc9c7bed-49be-4783-9d09-a928b263d251</sesion>
+            <ip>10.0.176.38</ip>
+            <idCliente>1714490537</idCliente>
+            <tipoIdCliente>0001</tipoIdCliente>
+            <bancs>
+               <teller>00070560</teller>
+               <terminal>1</terminal>
+               <institucion>0010</institucion>
+               <agencia>1</agencia>
+               <estacion>1</estacion>
+               <aplicacion/>
+               <canal/>
+            </bancs>
+         </headerIn>
+         <bodyIn>
+            <identificacion>1714490537</identificacion>
+            <tipoIdentificacion>0001</tipoIdentificacion>
+         </bodyIn>
+      </ser:ConsultarIdentificacion01>
+   </soapenv:Body>
+</soapenv:Envelope>'
  
