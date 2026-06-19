@@ -506,4 +506,10 @@ curl --request POST \
       </NS1:CreacionCliente21>
    </soapenv:Body>
 </soapenv:Envelope>
- 
+
+
+
+keytool -importcert \
+  -alias sri \
+  -file certificado.crt \
+  -keystore truststore.jks 
