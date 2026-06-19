@@ -230,3 +230,8 @@ server:
 
 -Djavax.net.ssl.trustStore=certificado.jks
 -Djavax.net.ssl.trustStorePassword=xxxxx
+
+-Djavax.net.ssl.trustStore=C:\Users\darochar\Documents\azure\certificado.jks
+-Djavax.net.ssl.trustStorePassword=TU_PASSWORD
+-Djavax.net.ssl.trustStoreType=PKCS12
+-Djavax.net.debug=ssl,handshake
