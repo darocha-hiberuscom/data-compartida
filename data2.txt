@@ -216,3 +216,14 @@ https://ays-msa-dm-wsclientes0220-enp.apps.ocptest.uiotest.bpichinchatest.test/a
     "backend": "00674"
   }
 }
+
+
+
+
+server:
+  ssl:
+    enabled: true
+    key-store: classpath:certificado.jks
+    key-store-password: password
+    key-store-type: PKCS12
+    key-alias: sri
