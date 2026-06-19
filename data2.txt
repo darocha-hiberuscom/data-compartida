@@ -280,3 +280,23 @@ server:
 </ser:ConsultarIdentificacion01>
 </soapenv:Body>
 </soapenv:Envelope>
+
+
+
+
+ORQClientes0035Config 	enableAUD 	"true"
+ORQClientes0035Config 	enableREN 	"true"
+ORQClientes0035Config 	codCacheSubSectorEconomico 	"codCache_SubSector"
+ORQClientes0035Config 	codDireccionDomicilio 	"01"
+ORQClientes0035Config 	enableEXC 	"true"
+ORQClientes0035Config 	centroCostosSegmento 	"8334"
+ORQClientes0035Config 	ubicacionTablaSubSector 	"\PARTMSECECO A (NOLOCK), PARTMTIPACT B (NOLOCK), PARTMSUBSEC C (NOLOCK), PARTMMALLA D (NOLOCK) WHERE A.PARTMSECECOCOD = B.PARTMSECECOCOD AND B.PARTMSUBSECCOD = C.PARTMSUBSECCOD AND D.PARTMMALLA_CODACTSFI = B.PARTMTIPACTCOD\"
+ORQClientes0035Config 	enableTRA 	"true"
+ORQClientes0035Config 	enableAUD 	"true"
+ORQClientes0035Config 	enableREN 	"true"
+ORQClientes0035Config 	codCacheSubSectorEconomico 	"codCache_SubSector"
+ORQClientes0035Config 	codDireccionDomicilio 	"01"
+ORQClientes0035Config 	enableEXC 	"true"
+ORQClientes0035Config 	centroCostosSegmento 	"8334"
+ORQClientes0035Config 	ubicacionTablaSubSector 	"\PARTMSECECO A (NOLOCK), PARTMTIPACT B (NOLOCK), PARTMSUBSEC C (NOLOCK), PARTMMALLA D (NOLOCK) WHERE A.PARTMSECECOCOD = B.PARTMSECECOCOD AND B.PARTMSUBSECCOD = C.PARTMSUBSECCOD AND D.PARTMMALLA_CODACTSFI = B.PARTMTIPACTCOD\"
+ORQClientes0035Config 	enableTRA 	"true"
